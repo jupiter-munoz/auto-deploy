@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Image Gallery Component" a:uuid="f6d9a1c3-3f5c-4dfc-8c78-512238cde1a8">
+        <a:description>Report currently uses type constructors rather than system rules and only has external images.</a:description>
+        <a:uiExpr>=#&quot;_a-0000d850-ecf9-8000-e4b8-010000010000_1580&quot;()</a:uiExpr>
+        <a:urlStub>3mqXXA</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Charts: Line Chart" a:uuid="c32fdd54-d78f-49c8-b7e0-eceb976fb187">
+        <a:description>Runtime equivalent to the mockups repository's component_line_chart.html</a:description>
+        <a:uiExpr>=#&quot;_a-0000d79b-bf21-8000-a7d9-e20000e20000_1718&quot;()</a:uiExpr>
+        <a:urlStub>lineChart</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+        <role name="report_viewer">
+            <users/>
+            <groups>
+                <groupUuid>0001d0b7-c973-8000-c973-4e2a554e2a55</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

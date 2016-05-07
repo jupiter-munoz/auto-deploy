@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>colChartDemo</name>
+        <uuid>_a-0000d7ac-cebf-8000-cab9-010000010000_1236</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>='type!{http://www.appian.com/ae/types/2009}FormLayout'(content:{
+	'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns:{
+		'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents:{
+			'type!{http://www.appian.com/ae/types/2009}SectionLayout'(content:{
+				'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns:{
+					'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents:{
+'type!{http://www.appian.com/ae/types/2009}ColumnChart'(
+  label: &quot;Code 9x&quot;,
+  categories: {&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;},
+  series: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 99&quot;, data: {3, 1, 2, 2, 2, 1, 0, 1, 0, 1, 0, 1}),
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 98&quot;, data: {4, 3, 3, 2, 4, 2, 1, 2, 0, 0, 1, 2})
+  },
+  yAxisTitle: &quot;Code 9x Count&quot;,
+  stacking: &quot;NORMAL&quot;,
+  showLegend: true,
+  showDataLabels: true,
+  showTooltips: false
+)
+})
+				})
+			}), 
+			
+			
+			'type!{http://www.appian.com/ae/types/2009}SectionLayout'(content:{
+				'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns:{
+					'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents:{
+'type!{http://www.appian.com/ae/types/2009}ColumnChart'(
+  label: &quot;Extra Series Data&quot;,
+  instructions: &quot;Each series has an extra value. An extra bar is rendered for that virtual category and it is shown with no label.&quot;,
+  categories: {&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;},
+  series: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 99&quot;, data: {3, 1, 2, 2, 2, 1, 0, 1, 0, 1, 0, 1, 2}),
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 98&quot;, data: {4, 3, 3, 2, 4, 2, 1, 2, 0, 0, 1, 2, 3})
+  },
+  yAxisTitle: &quot;Code 9x Count&quot;,
+  stacking: &quot;NORMAL&quot;,
+  showLegend: true,
+  showDataLabels: true,
+  showTooltips: false
+)
+					}),
+					'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents:{
+
+					'type!{http://www.appian.com/ae/types/2009}ColumnChart'(
+  label: &quot;Hide Axis Titles and Inline Labels, Tooltips Enabled, Negative Values&quot;,
+  categories: {&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;},
+  series: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 99&quot;, data: {3, 1, 2, 2, 2, 1, 0, -1, 0, 1, 0, 1}),
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 98&quot;, data: {4, 3, 3, 2, -4, 2, 1, 2, 0, 0, 1, 2})
+  },
+  stacking: &quot;NORMAL&quot;,
+  showLegend: true,
+  showDataLabels: false,
+  showTooltips: true
+)
+
+					})
+				})
+			}),
+			
+			'type!{http://www.appian.com/ae/types/2009}SectionLayout'(content:{
+				'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns:{
+					'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents:{
+'type!{http://www.appian.com/ae/types/2009}ColumnChart'(
+  label: &quot;Code 9x&quot;,
+  categories: {&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;},
+  series: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 99&quot;, data: {3, 1, 2, 2, 2, 1, 0, 1, 0, 1, 0, 1}),
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 98&quot;, data: {4, 3, 3, 2, 4, 2, 1, 2, 0, 0, 1, 2})
+  },
+  yAxisTitle: &quot;Code 9x Count&quot;,
+  stacking: &quot;NONE&quot;,
+  showLegend: true,
+  showDataLabels: true,
+  showTooltips: false
+)
+})
+				})
+			}),
+
+			'type!{http://www.appian.com/ae/types/2009}SectionLayout'(content:{
+				'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns:{
+					'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents:{
+'type!{http://www.appian.com/ae/types/2009}ColumnChart'(
+  label: &quot;Extra Series Data&quot;,
+  instructions: &quot;Each series has an extra value. An extra bar is rendered for that virtual category and it is shown with no label.&quot;,
+  categories: {&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;},
+  series: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 99&quot;, data: {3, 1, 2, 2, 2, 1, 0, 1, 0, 1, 0, 1, 2}),
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 98&quot;, data: {4, 3, 3, 2, 4, 2, 1, 2, 0, 0, 1, 2, 3})
+  },
+  yAxisTitle: &quot;Code 9x Count&quot;,
+  stacking: &quot;NONE&quot;,
+  showLegend: true,
+  showDataLabels: true,
+  showTooltips: false
+)
+					}),
+					'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents:{
+'type!{http://www.appian.com/ae/types/2009}ColumnChart'(
+  label: &quot;Hide Axis Titles and Inline Labels, Tooltips Enabled, Negative Values&quot;,
+  categories: {&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;},
+  series: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 99&quot;, data: {3, 1, 2, 2, 2, 1, 0, -1, 0, 1, 0, 1}),
+    'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;Code 98&quot;, data: {4, 3, 3, 2, -4, 2, 1, 2, 0, 0, 1, 2})
+  },
+  stacking: &quot;NONE&quot;,
+  showLegend: true,
+  showDataLabels: false,
+  showTooltips: true
+)
+					})
+				})
+			})
+		})
+	})
+})</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

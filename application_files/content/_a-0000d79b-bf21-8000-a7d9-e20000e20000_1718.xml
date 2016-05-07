@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportLineChart</name>
+        <uuid>_a-0000d79b-bf21-8000-a7d9-e20000e20000_1718</uuid>
+        <description>Runtime equivalent to the mockups repository's component_line_chart.html</description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>'type!{http://www.appian.com/ae/types/2009}FormLayout'(
+	instructions: &quot;Current scope and behavior of the line chart component&quot;,
+	content: 
+		{
+			'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+				columns:
+					{
+						'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+							contents:
+								{
+									'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+										label: &quot;Default&quot;,
+										content:
+											{
+												'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+													columns:
+														{
+															'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+																contents:
+																	{
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  label: &quot;Tempo Usage Trends&quot;,
+																		  instructions: &quot;Legend enabled, tooltips enabled&quot;,
+																		  categories: {&quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;, &quot;Feb&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Technology&quot;, data: {92, 94, 93, 95, 96, 99, 98, 100, 99, 91, 98, 99}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Professional Services&quot;, data: {84, 83, 85, 86, 87, 89, 91, 90, 89, 83, 93, 95}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Sales&quot;, data: {70, 63, 90, 72, 74, 74, 76, 89, 72, 65, 100, 85}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Marketing&quot;, data: {80, 80, 80, 90, 90, 90, 90, 90, 90, 70, 90, 90})
+																		  },
+																		  xAxisTitle: &quot;Month&quot;,
+																		  yAxisTitle: &quot;% Active&quot;,
+																		  showLegend: true,
+																		  showTooltips: true
+																		)
+																	}
+															)
+														}
+												)
+											}
+									),
+									'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+										label: &quot;Configurations&quot;,
+										content:
+											{
+												'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+													columns:
+														{
+															'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+															contents:
+																{
+																	'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																	  label: &quot;Single Series&quot;,
+																	  categories: {&quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;, &quot;Feb&quot;},
+																	  series: {
+																		'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Sales&quot;, data: {72, 91, 93, 95, 92, 99, 98, 99, 79, 83, 90, 99})
+																	  },
+																	  showTooltips: false,
+																	  showDataLabels: false
+																	),
+																	'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																	  label: &quot;No Axis Titles, Tooltips Enabled&quot;,
+																	  categories: {&quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;, &quot;Feb&quot;},
+																	  series: {
+																		'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Technology&quot;, data: {92, 94, 93, 95, 96, 99, 98, 100, 99, 91, 98, 99}),
+																		'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Professional Services&quot;, data: {84, 83, 85, 86, 87, 89, 91, 90, 89, 83, 93, 95}),
+																		'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Sales&quot;, data: {70, 63, 90, 72, 74, 74, 76, 89, 72, 65, 100, 85}),
+																		'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Marketing&quot;, data: {80, 80, 80, 90, 90, 90, 90, 90, 90, 70, 90, 90})
+																	  },
+																	  showLegend: true,
+																	  showTooltips: true
+																	)
+																}
+															),
+															'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+																contents:
+																	{
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  label: &quot;Single Series, Tooltips Enabled&quot;,
+																		  categories: {&quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;, &quot;Feb&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Sales&quot;, data: {72, 91, 93, 95, 92, 99, 98, 99, 79, 83, 90, 99})
+																		  },
+																		  showTooltips: true
+																		),
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  label: &quot;No Legend, Explicit Max&quot;,
+																		  instructions: &quot;Legend turned off. Also, a max of 100 is set for the % axis.&quot;,
+																		  categories: {&quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;, &quot;Feb&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Technology&quot;, data: {92, 94, 93, 95, 96, 99, 98, 100, 99, 91, 98, 99}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Professional Services&quot;, data: {84, 83, 85, 86, 87, 89, 91, 90, 89, 83, 93, 95}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Sales&quot;, data: {70, 63, 90, 72, 74, 74, 76, 89, 72, 65, 100, 85}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Marketing&quot;, data: {80, 80, 80, 90, 90, 90, 90, 90, 90, 70, 90, 90})
+																		  },
+																		  xAxisTitle: &quot;Month&quot;,
+																		  yAxisTitle: &quot;% Active&quot;,
+																		  yAxisMax: 100,
+																		  showLegend: false
+																		)
+																	}
+															)
+														}
+												)
+											}
+									),
+									'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+										label: &quot;Edge Cases&quot;,
+										content:
+											{
+												'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+													columns:
+														{
+															'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+																contents:
+																	{
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  label: &quot;High Density and Long Labels&quot;,
+																		  categories: {&quot;March 2012&quot;, &quot;April 2012&quot;, &quot;May 2012&quot;, &quot;June 2012&quot;,&quot;July 2012&quot;, &quot;August 2012&quot;, &quot;September 2012&quot;, &quot;October 2012&quot;, &quot;November 2012&quot;, &quot;December 2012&quot;, &quot;January 2013&quot;, &quot;February 2013&quot;, &quot;March 2013&quot;, &quot;April 2013&quot;, &quot;May 2013&quot;, &quot;June 2013&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;The Technology Department&quot;, data: {92, 94, 93, 95, 96, 99, 98, 100, 99, 91, 98, 99}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;The Professional Services Department&quot;, data: {84, 83, 85, 86, 87, 89, 91, 90, 89, 83, 93, 95}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;The Sales Department&quot;, data: {70, 63, 90, 72, 74, 74, 76, 89, 72, 65, 100, 85}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;The Marketing Department&quot;, data: {80, 80, 80, 90, 90, 90, 90, 90, 90, 70, 90, 90})
+																		  },
+																		  xAxisTitle: &quot;The Month of The Year Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in consequat dui. Fusce mi nunc, feugiat sed pharetra sed, luctus eget erat&quot;,
+																		  yAxisTitle: &quot;% Employees That Were Active on Tempo&quot;,
+																		  showLegend: true,
+																		  showTooltips: false
+																		),
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  label: &quot;Null/Empty Series Data&quot;,
+																		  categories: {&quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;High&quot;, data: {76,82,91,92,87,79,80}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Low&quot;, data: {})
+																		  },
+																		  xAxisTitle: &quot;Day&quot;,
+																		  yAxisTitle: &quot;Temperature (°F)&quot;,
+																		  showLegend: true
+																		)
+																	}
+															),
+															'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+																contents:
+																	{
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  label: &quot;Wide Data Range and Negative Values&quot;,
+																		  categories: {&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Apocalypse&quot;, &quot;Day After&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Springfield&quot;, data: {65,67,66,678901,-459})
+																		  },
+																		  yAxisTitle: &quot;High Temperature (°F)&quot;,
+																		  xAxisTitle: &quot;Day&quot;,
+																		  showTooltips: true
+																		),
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  label: &quot;Disconnect (Missing Data)&quot;,
+																		  categories: {&quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;High&quot;, data: {76, 82, null, 92, 87, 79, 80}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Low&quot;, data: {64, 70, 82, 81, 75, 67, null})
+																		  },
+																		  xAxisTitle: &quot;Day&quot;,
+																		  yAxisTitle: &quot;Temperature (F)&quot;,
+																		  showLegend: true,
+																		  showDataLabels: true
+																		)
+																	}
+															)
+														}
+												)
+											}
+									),
+									'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+										label: &quot;Variable Width, Scrollable&quot;,
+										content:
+											{
+												'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+													columns:
+														{
+															'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+																contents:
+																	{
+																		'type!{http://www.appian.com/ae/types/2009}LineChart'(
+																		  categories: {&quot;March 2012&quot;, &quot;April 2012&quot;, &quot;May 2012&quot;, &quot;June 2012&quot;,&quot;July 2012&quot;, &quot;August 2012&quot;, &quot;September 2012&quot;, &quot;October 2012&quot;, &quot;November 2012&quot;, &quot;December 2012&quot;, &quot;January 2013&quot;, &quot;February 2013&quot;, &quot;March 2013&quot;, &quot;April 2013&quot;, &quot;May 2013&quot;, &quot;June 2013&quot;},
+																		  series: {
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Technology&quot;, data: {92, 94, 93, 95, 96, 99, 98, 100, 99, 91, 98, 99}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Professional Services&quot;, data: {84, 83, 85, 86, 87, 89, 91, 90, 89, 83, 93, 95}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Sales&quot;, data: {70, 63, 90, 72, 74, 74, 76, 89, 72, 65, 100, 85}),
+																			'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;Marketing&quot;, data: {80, 80, 80, 90, 90, 90, 90, 90, 90, 70, 90, 90})
+																		  },
+																		  xAxisTitle: &quot;Month&quot;,
+																		  yAxisTitle: &quot;% Active&quot;,
+																		  showLegend: true,
+																		  showTooltips: false
+																		)
+																	}
+															),
+															'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+																contents:
+																	{
+																	}
+															)
+														}
+												)
+											}
+									)
+								}
+						)
+					}
+			)
+		}
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

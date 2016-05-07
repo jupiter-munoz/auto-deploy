@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>dropDownFieldMultiple_example</name>
+        <uuid>_a-0000d7a5-8c7d-8000-88a3-010000010000_1457</uuid>
+        <description></description>
+        <parentUuid>_a-0000d710-87e4-8000-837a-010000010000_1404</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+disabled: and(not(#&quot;_a-0000d6f5-c20a-8000-bd70-010000010000_1375&quot;), rf!disabled),
+defaultvalue: if(rf!defaultvalue=true, {2,3,4,6}, null),
+
+'type!{http://www.appian.com/ae/types/2009}MultipleDropdownField'(
+  label: &quot;Grocery shopping list&quot;,
+  instructions: &quot;Choose all the items that you want&quot;,
+  choices: {&quot;Cereal&quot;, &quot;Fruit&quot;, &quot;Vegetables&quot;, &quot;Milk&quot;, &quot;Cheese&quot;, &quot;Tortillas&quot;, &quot;Gatorade&quot;, &quot;Chicken&quot;, &quot;Meat&quot;, &quot;Pasta&quot;, &quot;Rice&quot;, &quot;Fried Beans&quot;},
+  required: true,
+  disabled: local!disabled,
+  value: local!defaultvalue,
+  saveInto: local!defaultvalue
+)
+
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

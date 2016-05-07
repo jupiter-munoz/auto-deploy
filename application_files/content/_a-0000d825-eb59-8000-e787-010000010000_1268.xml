@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>createCaseForm</name>
+        <uuid>_a-0000d825-eb59-8000-e787-010000010000_1268</uuid>
+        <description></description>
+        <parentUuid>_a-0000d825-eb59-8000-e787-010000010000_1262</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_formLayout&quot;(
+  label: &quot;Create a Case&quot;,
+  firstColumnContents: {
+    #&quot;SYSTEM_SYSRULES_textField&quot;(label: &quot;Title&quot;, required: true, value: ri!title, saveInto: ri!title),
+    #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+      label: &quot;Description&quot;,
+      instructions: &quot;Please include detailed information about the environment type (e.g., production, UAT, development, etc.), OS, system resources, etc.&quot;,
+      required: true,
+      value: ri!description,
+      saveInto: ri!description
+    ),
+    apply(#&quot;_a-0000d825-eb59-8000-e787-010000010000_1267&quot;(ri!files, _), 1+fn!enumerate(count(ri!files))),
+    #&quot;SYSTEM_SYSRULES_dropdownFieldByIndex&quot;(
+      label: &quot;Category&quot;,
+      choiceLabels: {
+        &quot;General&quot;,
+        &quot;home.appian.com&quot;,
+        &quot;Hardware&quot;,
+        &quot;Software&quot;,
+        &quot;Email&quot;,
+        &quot;HQ ID Cards&quot;,
+        &quot;VPN&quot;,
+        &quot;Phone&quot;,
+        &quot;Network&quot;,
+        &quot;Peoplesoft&quot;,
+        &quot;Postini&quot;,
+        &quot;Smartphones&quot;,
+        &quot;Web Conferencing&quot;
+      },
+      value: ri!category,
+      saveInto: ri!category
+    ),
+    #&quot;SYSTEM_SYSRULES_dropdownFieldByIndex&quot;(
+      label: &quot;Priority&quot;,
+      instructions: &quot;CRITICAL: Revenue-impacting enterprise issues that affect the entire company. HIGH: issues that may potentially become revenue impacting but do not affect the entire company. MEDIUM: issues affecting a single user or for enhancement requests that need to be completed to avoid impending revenue loss. LOW: issues that have known workarounds, issues that do not affect revenue, or enhancement suggestions.&quot;,
+      choiceLabels: {
+        &quot;1 - Critical&quot;,
+        &quot;2 - High&quot;,
+        &quot;3 - Medium&quot;,
+        &quot;4 - Low&quot;
+      },
+      value: ri!priority,
+      saveInto: ri!priority
+    )
+  },
+  buttons: #&quot;SYSTEM_SYSRULES_ButtonArrayLayout&quot;(buttons: {
+    #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(label: &quot;Submit&quot;, style: &quot;PRIMARY&quot;)
+  })
+)</definition>
+        <namedTypedValue>
+            <name>title</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>description</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>files</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>category</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>priority</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

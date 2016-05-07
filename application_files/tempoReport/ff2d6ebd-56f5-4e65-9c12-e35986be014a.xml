@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Custom Picker Test" a:uuid="ff2d6ebd-56f5-4e65-9c12-e35986be014a">
+        <a:description></a:description>
+        <a:uiExpr>=#&quot;_a-0000d86d-4a16-8000-10c7-040000040000_2430&quot;()</a:uiExpr>
+        <a:urlStub>-XmhlQ</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

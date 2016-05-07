@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportMaskedTextField</name>
+        <uuid>_a-0001d7ad-feac-8000-feac-cb0000cb0000_1181</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+  local!a,
+  local!b: &quot;&quot;&quot;Quelala being the first owner of the Golden Cap,&quot;&quot; replied the Monkey, &quot;&quot;he was the first to lay his wishes upon us. As his bride could not bear the sight of us, he called us all to him in the forest after he had married her and ordered us always to keep where she could never again set eyes on a Winged Monkey, which we were glad to do, for we were all afraid of her.&quot;&quot;&quot;,
+  local!c: &quot;With default value&quot;,
+  local!d: local!b,
+  local!e,
+  'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+    columns: {
+      'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+        contents: {
+          'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+            content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+              columns: {
+                'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                  contents: {
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Standard Input&quot;,
+                      instructions: &quot;Instructions&quot;,
+                      value: local!a,
+                      validations: 'type!{http://www.appian.com/ae/types/2009}ValidationMessage'(message: &quot;Validation error message&quot;),
+                      saveInto: local!a
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Default Value&quot;,
+                      value: local!b,
+                      saveInto: local!b
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Disabled Empty&quot;,
+                      disabled: true
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Disabled&quot;,
+                      disabled: true,
+                      value: local!c,
+                      saveInto: local!c
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Disabled Long Default&quot;,
+                      disabled: true,
+                      value: local!d,
+                      saveInto: local!d
+                    )
+                  }
+                ),
+                'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                  contents: {
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Read-Only&quot;,
+                      readOnly: true,
+                      value: local!b,
+                      saveInto: local!b
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Read-Only &amp; Disabled&quot;,
+                      disabled: true,
+                      readOnly: true,
+                      value: local!c,
+                      saveInto: local!c
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;Read-Only No Value&quot;,
+                      readOnly: true
+                    )
+                  }
+                )
+              }
+            )
+          ),
+          'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+              label: &quot;One-Column Section&quot;,
+            content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+              columns: {
+                'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                  contents: {
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;One-Column Editable&quot;,
+                      value: local!e,
+                      saveInto: local!e
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}MaskedTextField'(
+                      label: &quot;One-Column Editable&quot;,
+                      readOnly: true,
+                      value: local!e
+                    )
+                  }
+                )
+              }
+            )
+          )
+        }
+      )
+    }
+  )
+)
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

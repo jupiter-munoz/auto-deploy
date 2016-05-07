@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_sitesDesigner</name>
+        <uuid>0f51b232-0852-40a8-a61d-693fb558650a</uuid>
+        <description></description>
+        <parentUuid>_a-0000da4e-7553-8000-f5a4-010000010000_2483</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(&#xD;
+   local!createSiteDesigner: fn!lambda_appian_internal(&#xD;
+    ri!name,&#xD;
+    ri!desc,&#xD;
+    ri!url,&#xD;
+    ri!sail,&#xD;
+    &#xD;
+        #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+          label:&quot;&quot;,&#xD;
+          firstColumnContents:{&#xD;
+            #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+              label: &quot;Name&quot;,&#xD;
+              labelPosition: &quot;ABOVE&quot;,&#xD;
+              value:ri!name,&#xD;
+              saveInto: {},&#xD;
+              refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+              required: fn!true(),&#xD;
+              validations: {},&#xD;
+              align: &quot;LEFT&quot;&#xD;
+            ),&#xD;
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+              label: &quot;Description&quot;,&#xD;
+              labelPosition: &quot;ABOVE&quot;,&#xD;
+              value:ri!desc,&#xD;
+              saveInto: {},&#xD;
+              refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+              validations: {}&#xD;
+            ),&#xD;
+            &#xD;
+          },&#xD;
+          secondColumnContents:{&#xD;
+            #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+              label: &quot;URL Stub&quot;,&#xD;
+              labelPosition: &quot;ABOVE&quot;,&#xD;
+              readOnly:fn!true(),&#xD;
+             /* instructions: &quot;Used to form a unique URL for the site. If left blank, a random alphanumeric string will be generated.&quot;,*/&#xD;
+              value:ri!url,&#xD;
+              saveInto: {},&#xD;
+              refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+              validations: {},&#xD;
+              align: &quot;LEFT&quot;&#xD;
+            ),&#xD;
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+              label: &quot;SAIL Interface&quot;,&#xD;
+              labelPosition: &quot;ABOVE&quot;,&#xD;
+              instructions: &quot;Enter an expression to define the SAIL interface&quot;,&#xD;
+              value:ri!sail,&#xD;
+              saveInto: {},&#xD;
+              refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+              validations: {}&#xD;
+            )&#xD;
+          }&#xD;
+        )&#xD;
+  ),&#xD;
+  local!createSiteDesigner(&quot;Test site&quot;,&quot;I am a test site&quot;,&quot;/testsite123&quot;,&quot;{}&quot;)&#xD;
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

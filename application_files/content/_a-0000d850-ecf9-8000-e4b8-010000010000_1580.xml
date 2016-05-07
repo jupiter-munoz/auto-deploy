@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportImageGallery</name>
+        <uuid>_a-0000d850-ecf9-8000-e4b8-010000010000_1580</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+  firstColumnContents: {
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+                  label: &quot;Large Image&quot;,
+                  instructions: &quot;Large images are auto-scaled to fit the column width&quot;,
+                  images: {
+                    #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                      source: &quot;https://dl.dropboxusercontent.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg?dl=1&quot;,
+                      altText: &quot;DISA Team&quot;
+                    )
+                  }
+                )
+      },
+      secondColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+                  label: &quot;Small Image&quot;,
+                  instructions: &quot;Small images are shown at their natural size; they are not scaled up&quot;,
+                  images: {
+                    #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                      source: &quot;https://dl.dropboxusercontent.com/s/dzah2dmk852plbc/small.jpg?dl=1&quot;,
+                      altText: &quot;Conference&quot;
+                    )
+                  }
+                )
+      }
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+                  label: &quot;Large Image&quot;,
+                  instructions: &quot;Large images are auto-scaled to fit the column width&quot;,
+                  images: {
+                    #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                      source: &quot;https://dl.dropboxusercontent.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg?dl=1&quot;,
+                      altText: &quot;DISA Team&quot;
+                    )
+                  }
+                )
+      }
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;Image Gallery (Edge Cases)&quot;,
+          instructions: &quot;1. Small image 2. Wide image 3. Invalid path 4. Tall image&quot;,
+          images:{
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/iumzmb5hfqpkgn0/small_image.png&quot;,
+              caption: &quot;Lorem ipsum dolor sit amet, accumsan percipitur eum et, unum iisque percipitur at his, no periculis deseruisse definitionem quo. At quo tritani graecis similique, mea an utinam noluisse detraxit. Rebum etiam reformidans vix no. Cu pro elit rebum habemus, no pro mundi abhorreant, mandamus inimicus incorrupte ea vel.&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/8z3ao4kjqs2xhst/wide_image.jpg&quot;,
+              caption: &quot;Lorem ipsum dolor sit amet&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/8z3ao4kjqs2xhst/missing_image.jpg&quot;,
+              alt: &quot;Example of missing image&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/ixceu74rpfr8s8n/tall_image.jpg&quot;,
+              caption: &quot;Lorem ipsum dolor sit amet&quot;
+            )
+          }
+        )
+      }
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+        label: &quot;Missing Image (Icons)&quot;,
+        instructions: &quot;Invalid image URL (browser default handling)&quot;,
+        size: &quot;ICON&quot;,
+        images:{
+          #&quot;SYSTEM_SYSRULES_webImage&quot;(
+            source: &quot;https://www.example.com&quot;
+          ),
+          #&quot;SYSTEM_SYSRULES_webImage&quot;(
+            source: &quot;https://dl.dropboxusercontent.com/s/810hgc9suhxqkmr/1.jpg&quot;
+          )
+        }
+      ),
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;Missing Image (Thumbnails)&quot;,
+          instructions: &quot;Invalid image URL (browser default handling)&quot;,
+          size: &quot;THUMBNAIL&quot;,
+          images:{
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://www.example.com&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/810hgc9suhxqkmr/1.jpg&quot;
+            )
+          }
+        ),
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;Missing Image (Standard)&quot;,
+          instructions: &quot;Invalid image URL (browser default handling)&quot;,
+          size: &quot;STANDARD&quot;,
+          images:{
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://www.example.com&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/810hgc9suhxqkmr/1.jpg&quot;
+            )
+          }
+        )
+      },
+      secondColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;No Value (Icons)&quot;,
+          instructions: &quot;Instructions for field with no image specified at run-time&quot;,
+          size: &quot;ICON&quot;,
+          images:{}
+        ),
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;No Value (Thumbnails)&quot;,
+          instructions: &quot;Instructions for field with no image specified at run-time&quot;,
+          size: &quot;THUMBNAIL&quot;,
+          images:{}
+        ),
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;No Value (Standard)&quot;,
+          instructions: &quot;Instructions for field with no image specified at run-time&quot;,
+          size: &quot;STANDARD&quot;,
+          images:{}
+        ),
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;Null Image Array&quot;,
+          instructions: &quot;The image array has been explicitly set to null&quot;,
+          images: null
+        ),
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;No Image Array&quot;,
+          instructions: &quot;No image array has been provided in parameters.&quot;
+        )
+      }
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;Image Gallery (Icons)&quot;,
+          instructions: &quot;The second and third images have captions. The fourth image has alt text.&quot;,
+          images:{
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/810hgc9suhxqkmr/1.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/exc64zmh85y905i/2.jpg&quot;,
+              caption: &quot;Lorem ipsum dolor sit amet&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/x5t50blhnifo9gx/3.jpg&quot;,
+              caption: &quot;Lorem ipsum dolor sit amet, accumsan percipitur eum et, unum iisque percipitur at his, no periculis deseruisse definitionem quo. At quo tritani graecis similique, mea an utinam noluisse detraxit. Rebum etiam reformidans vix no. Cu pro elit rebum habemus, no pro mundi abhorreant, mandamus inimicus incorrupte ea vel.&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/z2dss0eijuw067c/4.jpg&quot;,
+              altText: &quot;Hello world&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/dkbesoy58wbeqbq/5.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/e19877epps0oml6/6.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/ubbwpbzvvt8jrnc/7.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/dgn2j4k35awtls7/8.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            )
+          },
+          size: &quot;ICON&quot;
+        ),
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          label: &quot;Image Gallery (Thumbnails)&quot;,
+          instructions: &quot;The second and third images have captions. The fourth image has alt text.&quot;,
+          images:{
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/810hgc9suhxqkmr/1.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/exc64zmh85y905i/2.jpg&quot;,
+              caption: &quot;Lorem ipsum dolor sit amet&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/x5t50blhnifo9gx/3.jpg&quot;,
+              caption: &quot;Lorem ipsum dolor sit amet, accumsan percipitur eum et, unum iisque percipitur at his, no periculis deseruisse definitionem quo. At quo tritani graecis similique, mea an utinam noluisse detraxit. Rebum etiam reformidans vix no. Cu pro elit rebum habemus, no pro mundi abhorreant, mandamus inimicus incorrupte ea vel.&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/z2dss0eijuw067c/4.jpg&quot;,
+              altText: &quot;Hello world&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/dkbesoy58wbeqbq/5.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/e19877epps0oml6/6.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/ubbwpbzvvt8jrnc/7.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/dgn2j4k35awtls7/8.jpg&quot;
+            ),
+            #&quot;SYSTEM_SYSRULES_webImage&quot;(
+              source: &quot;https://dl.dropboxusercontent.com/s/wqnehcifnv9wy9p/9.jpg&quot;
+            )
+          },
+          size: &quot;THUMBNAIL&quot;
+        ),
+        load(
+          local!clickedImage: null,
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            instructions: &quot;The second and third images have captions. The fourth image has alt text. Images 1 and 2 are clickable.&quot; &amp;
+                if(isnull(clickedImage), &quot;&quot;, &quot; Clicked image &quot; &amp; local!clickedImage),
+            label: &quot;Image Gallery with Clickable and Non-Clickable Images (Standard)&quot;,
+            images:{
+              #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                source: &quot;https://dl.dropboxusercontent.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg&quot;,
+                link:
+                  #&quot;SYSTEM_SYSRULES_safeLink&quot;(
+                    uri: &quot;https://dl.dropboxusercontent.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg&quot;
+                  )
+              ),
+              #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                source: &quot;https://dl.dropboxusercontent.com/s/dzah2dmk852plbc/small.jpg&quot;,
+                caption: &quot;Lorem ipsum dolor sit amet&quot;,
+                link: #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(value:3, saveInto:local!clickedImage)
+              ),
+              #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                source: &quot;https://dl.dropboxusercontent.com/s/x5t50blhnifo9gx/3.jpg&quot;,
+                caption: &quot;Lorem ipsum dolor sit amet, accumsan percipitur eum et, unum iisque percipitur at his, no periculis deseruisse definitionem quo. At quo tritani graecis similique, mea an utinam noluisse detraxit. Rebum etiam reformidans vix no. Cu pro elit rebum habemus, no pro mundi abhorreant, mandamus inimicus incorrupte ea vel.&quot;
+              ),
+              #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                source: &quot;https://dl.dropboxusercontent.com/s/z2dss0eijuw067c/4.jpg&quot;,
+                altText: &quot;Hello world&quot;
+              )
+            },
+            size: &quot;STANDARD&quot;
+          )
+        )
+      },
+      secondColumnContents: {
+        load(
+          local!clickedImage: null,
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            label: &quot;Image Gallery From Document With Clickable And Non-Clickable Images (Icons)&quot;,
+            instructions: &quot;Images 2, 3, and 6 are clickable.&quot; &amp;
+              if(isnull(clickedImage), &quot;&quot;, &quot; Clicked image &quot; &amp; local!clickedImage),
+            size: &quot;ICON&quot;,
+            images: {
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;ADD&quot;)
+              ),
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;REMOVE&quot;),
+                link:
+                  #&quot;SYSTEM_SYSRULES_safeLink&quot;(
+                    uri: &quot;https://dl.dropboxusercontent.com/s/5rr784ltark4mxc/colortest1_gray.png&quot;
+                  )
+              ),
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_ERROR&quot;),
+                link: #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(value:3, saveInto:local!clickedImage)
+              ),
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_NOTDONE&quot;)
+              ),
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_OK&quot;)
+              ),
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_WARN&quot;),
+                link: #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(value:6, saveInto:local!clickedImage)
+              )
+            }
+          )
+        ),
+        with(
+          createDocumentLink: lambda_appian_internal(
+            ri!doc,
+            #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+              document: ri!doc,
+              altText: document(ri!doc, &quot;name&quot;),
+              caption: document(ri!doc, &quot;name&quot;) &amp; &quot; uploaded by &quot; &amp; document(ri!doc, &quot;lastUserToModify&quot;)
+            )
+          ),
+          documents: getDocumentsFromFolder(#&quot;_a-0000d84a-44ff-8000-4100-010000010000_1315&quot;, true),
+          images: apply(local!createDocumentLink, index(documents, enumerate(9) + 1, null)),
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            label: &quot;Image Gallery From Document (Thumbnails)&quot;,
+            size: &quot;THUMBNAIL&quot;,
+            instructions: &quot;Documents located in the &quot; &amp; folder(#&quot;_a-0000d84a-44ff-8000-4100-010000010000_1315&quot;, &quot;name&quot;) &amp; &quot; folder&quot;,
+            images: images
+          )
+        ),
+        with(
+          createDocumentLink: lambda_appian_internal(
+            ri!doc,
+            #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+              document: ri!doc,
+              altText: document(ri!doc, &quot;name&quot;),
+              caption: document(ri!doc, &quot;name&quot;) &amp; &quot; uploaded by &quot; &amp; document(ri!doc, &quot;lastUserToModify&quot;)
+            )
+          ),
+          documents: getDocumentsFromFolder(#&quot;_a-0000d84a-44ff-8000-4100-010000010000_1315&quot;, true),
+          images: apply(local!createDocumentLink, index(documents, enumerate(2) + 1, null)),
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            label: &quot;Image Gallery From Document (Standard)&quot;,
+            size: &quot;STANDARD&quot;,
+            instructions: &quot;Documents located in the &quot; &amp; folder(#&quot;_a-0000d84a-44ff-8000-4100-010000010000_1315&quot;, &quot;name&quot;) &amp; &quot; folder&quot;,
+            images: images
+          )
+        )
+      }
+    )
+  }
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportChartColors</name>
+        <uuid>_a-0000d86d-2151-8000-796a-010000010000_1371</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+  firstColumnContents:{
+    #&quot;SYSTEM_SYSRULES_lineChartField&quot;(
+      label: &quot;Line Chart&quot;,
+      categories: {&quot;Start&quot;, &quot;End&quot;},
+      series: {
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;RED&quot;,   data: {1,1}, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;GREEN&quot;, data: {2,2}, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;RED&quot;,   data: {3,3}, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;GREEN&quot;, data: {4,4}, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;RED&quot;,   data: {5,5}, color: &quot;RED&quot;)
+      }
+    ),
+    #&quot;SYSTEM_SYSRULES_pieChartField&quot;(
+      label: &quot;Pie Chart&quot;,
+      series: {
+        'type!{http://www.appian.com/ae/types/2009}PieChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}PieChartSeries'(label: &quot;GREEN&quot;, data: 1, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}PieChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}PieChartSeries'(label: &quot;GREEN&quot;, data: 1, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}PieChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;)
+      },
+      showDataLabels: true
+    ),
+    #&quot;SYSTEM_SYSRULES_barChartField&quot;(
+      label: &quot;Bar Chart&quot;,
+      series: {
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;GREEN&quot;, data: 1, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;GREEN&quot;, data: 1, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;)
+      },
+      showDataLabels: true
+    ),
+    #&quot;SYSTEM_SYSRULES_columnChartField&quot;(
+      label: &quot;Column Chart&quot;,
+      series: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;GREEN&quot;, data: 1, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;GREEN&quot;, data: 1, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}ColumnChartSeries'(label: &quot;RED&quot;,   data: 1, color: &quot;RED&quot;)
+      },
+      showDataLabels: true
+    ),
+    'type!{http://www.appian.com/ae/types/2009}LineChart'(
+      label: &quot;Color Demo&quot;,
+      instructions: &quot;Some of these colors are specified by the designer and some are the default&quot;,
+      categories: {&quot;Start&quot;, &quot;End&quot;},
+      series: {
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;BLUEGRAY (default)&quot;, data: {1,1}, color: &quot;&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;RED (specified)&quot;,    data: {2,2}, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;GREEN (default)&quot;,    data: {3,3}, color: null),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;RED (specified)&quot;,    data: {4,4}, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;GOLD (default)&quot;,     data: {5,5}),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;RED (specified)&quot;,    data: {6,6}, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;ORANGE (default)&quot;,      data: {7,7}),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;RED (specified)&quot;,    data: {8,8}, color: &quot;RED&quot;),
+        'type!{http://www.appian.com/ae/types/2009}LineChartSeries'(label: &quot;PURPLE (default)&quot;,  data: {9,9})
+      }
+    ),
+    load(
+      local!indices: {1,2,3},
+      local!alldata: {
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Active Users&quot;, data: {6500, 5300, 5500, 7000, 5200, 5000, 5750, 5600, 5800, 5200}, color: &quot;SKYBLUE&quot;),
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Mobile Users&quot;, data: {260, 280, 255, 253, 240, 230, 248, 242, 255, 250}, color: &quot;GREEN&quot;),
+        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Social Users&quot;, data: {null, null, null, null, null, null, null, null, null, null}, color: &quot;YELLOW&quot;)
+      },
+      with(
+        local!somedata: index(local!alldata, local!indices),
+        {
+          #&quot;SYSTEM_SYSRULES_checkboxFieldByIndex&quot;(
+            label: &quot;Select Data&quot;,
+            choiceLabels: local!alldata.label,
+            value: local!indices,
+            saveInto: local!indices 
+          ),
+          #&quot;SYSTEM_SYSRULES_lineChartField&quot;(
+            label: &quot;Unique Monthly Users for Aggregate Customers&quot;,
+            xAxisTitle: &quot;Month&quot;,
+            yAxisTitle: &quot;Users&quot;,
+            yAxisMin: 0,
+            showTooltips: false,
+            series:somedata,
+            categories: {
+              &quot;Jan 2013&quot;,
+              &quot;Feb 2013&quot;,
+              &quot;Mar 2013&quot;,
+              &quot;Apr 2013&quot;,
+              &quot;May 2013&quot;,
+              &quot;Jun 2013&quot;,
+              &quot;Jul 2013&quot;,
+              &quot;Aug 2013&quot;,
+              &quot;Sep 2013&quot;,
+              &quot;Oct 2013&quot;
+            }
+          )
+        }
+      )
+    )
+
+  }
+)
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

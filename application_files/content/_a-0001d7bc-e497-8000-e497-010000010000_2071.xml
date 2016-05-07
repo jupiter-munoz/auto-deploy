@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportMilestoneField</name>
+        <uuid>_a-0001d7bc-e497-8000-e497-010000010000_2071</uuid>
+        <description>Runtime equivalent to the mockups repository's component_milestone.html</description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>='type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+  columns: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+      contents: {
+        'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+      	    content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+            columns: {
+              'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                contents: {
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    steps: {&quot;Request Initiated&quot;, &quot;Submitted to Contracting&quot;, &quot;Contracting Specialist Assigned&quot;, &quot;Final RFQ Uploaded&quot;, &quot;RFQ Released to Vendors&quot;, &quot;Contract Awarded&quot;},
+                    active: 4
+                  ),
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;High Density With Label &amp; Instructions&quot;,
+                    instructions: &quot;When &gt;7 steps, use dense layout.&quot;,
+                    steps: {&quot;General&quot;, &quot;Type&quot;, &quot;Overview&quot;, &quot;Management&quot;, &quot;Capital&quot;, &quot;Convenience&quot;, &quot;Premises&quot;, &quot;Information Systems&quot;, &quot;Other&quot;, &quot;OCC Certification&quot;, &quot;FDIC Certification&quot;, &quot;Oath of Bank Director&quot;, &quot;Oath of Savings Association&quot;, &quot;Upload&quot;, &quot;Exhibits&quot;},
+                    active: 2
+                  ),
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;High Density With Abbreviated Step Names&quot;,
+                    instructions: &quot;This is how OCC actually abreviates their step names&quot;,
+                    steps: {&quot;General&quot;, &quot;Type&quot;, &quot;Overview&quot;, &quot;Mgmt&quot;, &quot;Capital&quot;, &quot;Conv&quot;, &quot;Premise&quot;, &quot;Info Sys&quot;, &quot;Other&quot;, &quot;OCC Cert&quot;, &quot;FDIC Cert&quot;, &quot;Oath Bank&quot;, &quot;Oath Savings&quot;, &quot;Upload&quot;, &quot;Exhibits&quot;},
+                    active: 2
+                  )
+                }
+              )
+            }
+          )
+        ),
+        'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+          content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+            columns: {
+              'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                contents: {
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;In Column&quot;,
+                    steps: {&quot;Ready&quot;, &quot;Set&quot;, &quot;Go!&quot;},
+                    active: 1
+                  ),
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;Mega-Dense&quot;,
+                    steps: {&quot;Bacon ipsum dolor sit amet short loin spare ribs rump&quot;, &quot;Rump pork beef ribs, short ribs kielbasa&quot;, &quot;Prosciutto turkey pork strip steak, pork loin boudin fatback&quot;, &quot;Pastrami beef bacon, rump doner swine tenderloin drumstick&quot;, &quot;Bacon ipsum dolor sit amet short loin spare ribs rump&quot;, &quot;Rump pork beef ribs, short ribs kielbasa&quot;, &quot;Prosciutto turkey pork strip steak, pork loin boudin fatback&quot;, &quot;Pastrami beef bacon, rump doner swine tenderloin drumstick&quot;},
+                    active: 2
+                  ),
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;Last Step is Current (In-Progress)&quot;,
+                    steps: {&quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;},
+                    active: 3
+                  ),
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;All Steps Done (Last Step Completed)&quot;,
+                    steps: {&quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;},
+                    active: -1
+                  )
+                }
+              ),
+              'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                contents: {
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;Two Steps (Minimum Allowed)&quot;,
+                    steps: {&quot;One&quot;, &quot;Two&quot;},
+                    active: 1
+                  ),
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    label: &quot;No Spaces&quot;,
+                    steps: {&quot;Baconipsumdolorsitametshortloinspareribsrump&quot;, &quot;Rumpporkbeefribsshortribskielbasa&quot;, &quot;Prosciuttoturkeyporkstripsteakporkloinboudinfatback&quot;, &quot;Pastramibeefbaconrumpdonerswinetenderloindrumstick&quot;},
+                    active: 2
+                  )
+                }
+              )
+            }
+          )
+        ),
+        'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+          label: &quot;Nested Sub-Step Demo&quot;,
+          content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+            columns: {
+              'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                contents: {
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    steps: {&quot;Application&quot;, &quot;Processing&quot;, &quot;Underwriting&quot;, &quot;Closing&quot;},
+                    active: 3
+                  ),
+                  'type!{http://www.appian.com/ae/types/2009}MilestoneField'(
+                    steps: {&quot;Title&quot;, &quot;Appraisal&quot;, &quot;Insurance&quot;, &quot;Inspection&quot;},
+                    active: 2
+                  )
+                }
+              )
+            }
+          )
+        )
+      }
+    )
+  }
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

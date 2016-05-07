@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportImpactAnalysisJson</name>
+        <uuid>_a-0000d8ce-12e2-8000-e07e-010000010000_1471</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!appId,
+  local!types: {
+    &quot;Application&quot;,
+    &quot;Content Item&quot;,
+    &quot;Data Store&quot;,
+    &quot;Datatype&quot;,
+    &quot;Group&quot;,
+    &quot;Group Type&quot;,
+    &quot;Page&quot;,
+    &quot;Process Model&quot;,
+    &quot;Process Model Folder&quot;,
+    &quot;Record&quot;,
+    &quot;Tempo Feed&quot;,
+    &quot;Tempo and Task Report (Ui Container)&quot;,
+    &quot;User&quot;
+  },
+  local!typeIds: {
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}Application', 1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}ContentItem', 1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}DataStore',1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}Datatype',1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}Group',1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}GroupType',1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}Page',1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}ProcessModel',1)),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}ProcessModelFolder',1)),
+    typeof('type!{http://www.appian.com/ae/types/2009}RecordType'()),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}TempoFeed',1)),
+    typeof('type!{http://www.appian.com/ae/types/2009}UiContainer'()),
+    typeof(cast('type!{http://www.appian.com/ae/types/2009}User', &quot;a&quot;))
+  },
+  local!includeTypes: local!typeIds,
+  #&quot;SYSTEM_SYSRULES_formLayout&quot;(
+    firstColumnContents: {
+      #&quot;SYSTEM_SYSRULES_integerField&quot;(
+        label: &quot;Application Id&quot;,
+        instructions: &quot;Please enter the id of the application you wish to get the JSON of&quot;,
+        value: local!appId,
+        saveInto: {
+          local!appId
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_checkboxField&quot;(
+        label: &quot;Types&quot;,
+        instructions: &quot;Please select the types you wish to include&quot;,
+        choiceLabels: local!types,
+        choiceValues: local!typeIds,
+        value: local!includeTypes,
+        saveInto: {
+          local!includeTypes
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label: &quot;Objects JSON&quot;,
+        firstColumnContents: {
+          with(
+            local!includeTypesArray: if(isnull(local!includeTypes), {}, apply(fn!trim, split(local!includeTypes, &quot;;&quot;))),
+            local!graphJson: if(isnull(local!appId), null, getgraphjson_appian_internal(local!appId, local!includeTypesArray)),
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label: &quot;Graph JSON&quot;,
+              value: local!graphJson
+            )
+          ),
+          with(
+            local!includeTypesArray: if(isnull(local!includeTypes), {}, apply(fn!trim, split(local!includeTypes, &quot;;&quot;))),
+            local!relationshipsJson: if(isnull(local!appId), null, getrelationshipsforallobjectsjson_appian_internal(local!appId, local!includeTypesArray)),
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label: &quot;Relationships JSON&quot;,
+              value: local!relationshipsJson
+            )
+          )
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label: &quot;Entry Points JSON&quot;,
+        firstColumnContents: {
+          with(
+            local!includeTypesArray: if(isnull(local!includeTypes), {}, apply(fn!trim, split(local!includeTypes, &quot;;&quot;))),
+            local!epGraphJson: if(isnull(local!appId), null, getgraphforentrypointsjson_appian_internal(local!appId, local!includeTypesArray)),
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label: &quot;Graph JSON&quot;,
+              value: local!epGraphJson
+            )
+          ),
+          with(
+            local!includeTypesArray: if(isnull(local!includeTypes), {}, apply(fn!trim, split(local!includeTypes, &quot;;&quot;))),
+            local!epRelationshipsJson: if(isnull(local!appId), null, getrelationshipsforentrypointsjson_appian_internal(local!appId, local!includeTypesArray)),
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label: &quot;Relationships JSON&quot;,
+              value: local!epRelationshipsJson
+            )
+          )
+        }
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

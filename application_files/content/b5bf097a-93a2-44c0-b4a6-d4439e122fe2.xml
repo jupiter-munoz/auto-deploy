@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportDocumentBrowserFieldColumns</name>
+        <uuid>b5bf097a-93a2-44c0-b4a6-d4439e122fe2</uuid>
+        <description>tests Miller columns layout</description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>
+load(
+  local!knowledgecenter: fn!contentuuidtoid_appian_internal(&quot;SYSTEM_KC_SYSTEM_KNOWLEDGE_CENTER&quot;),
+  local!folderId: null,
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+    firstColumnContents:{
+      #&quot;SYSTEM_SYSRULES_pickerFieldFolders&quot;(
+        label: &quot;Select Folder&quot;,
+        labelPosition: &quot;ADJACENT&quot;,
+        maxSelections: 1,
+        value: local!folderId,
+        saveInto: local!folderId,
+        folderFilter: fn!tointeger(local!knowledgecenter)
+      ),
+      if(
+        #&quot;SYSTEM_SYSRULES_isNullOrEmpty&quot;(local!knowledgecenter),
+        {},
+        #&quot;SYSTEM_SYSRULES_documentBrowserFieldColumns&quot;(
+          knowledgecenter: if(#&quot;SYSTEM_SYSRULES_isNullOrEmpty&quot;(local!folderId), local!knowledgecenter, null),
+          folder: local!folderId,
+          height: &quot;TALL&quot;
+        )
+      )
+    }
+  )
+)
+        </definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

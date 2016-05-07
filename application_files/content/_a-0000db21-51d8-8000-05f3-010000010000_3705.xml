@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>generateGroupBrowserReport</name>
+        <uuid>_a-0000db21-51d8-8000-05f3-010000010000_3705</uuid>
+        <description>This is a tempo report that showcases the capabilities of User/Group Browser Field system rules.</description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>
+fn!load(
+  local!group,
+  local!save,
+  local!hideUsers,
+  local!readOnly,
+  local!selectionType: &quot;ANY&quot;,
+  local!path,
+  local!selectionValue,
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+    firstColumnContents:{
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;Controls&quot;,
+        firstColumnContents:{
+          #&quot;SYSTEM_SYSRULES_pickerFieldGroups&quot;(
+            label: &quot;Initial Group&quot;,
+            labelPosition: &quot;ADJACENT&quot;,
+            maxSelections: 1,
+            value: local!group,
+            saveInto: {
+              local!group,
+              a!save(local!path, {})
+            }
+          ),
+          #&quot;SYSTEM_SYSRULES_radioButtonField&quot;(
+            label: &quot;Browser Type&quot;,
+            labelPosition: &quot;ADJACENT&quot;,
+            choiceLabels: {&quot;User&quot;, &quot;Group&quot;, &quot;Any&quot;},
+            choiceValues: {&quot;USER&quot;, &quot;GROUP&quot;, &quot;ANY&quot;},
+            value: local!selectionType,
+            saveInto: {
+              local!selectionType,
+              a!save(local!selectionValue, fn!null()),
+              a!save(local!path, fn!null())
+            },
+            choiceLayout: &quot;COMPACT&quot;
+          )
+        },
+        secondColumnContents: {
+          #&quot;SYSTEM_SYSRULES_checkboxField&quot;(
+            labelPosition: &quot;COLLAPSED&quot;,
+            choiceLabels: {&quot;Read-only&quot;},
+            choiceValues: {true},
+            value: local!readOnly,
+            saveInto: local!readOnly
+          ),
+          fn!if(local!selectionType = &quot;GROUP&quot;,
+            #&quot;SYSTEM_SYSRULES_checkboxField&quot;(
+              labelPosition: &quot;COLLAPSED&quot;,
+              choiceLabels: {&quot;Hide users&quot;},
+              choiceValues: { fn!true() },
+              value: local!hideUsers,
+              saveInto: local!hideUsers
+            ),
+            {}
+          )
+        }
+      ),
+      fn!if(
+        #&quot;SYSTEM_SYSRULES_isNullOrEmpty&quot;(local!group),
+        {},
+        {
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            label:&quot;Component&quot;,
+            firstColumnContents: {
+              fn!choose(fn!wherecontains(local!selectionType, {&quot;USER&quot;, &quot;GROUP&quot;, &quot;ANY&quot;})[1],
+                #&quot;SYSTEM_SYSRULES_userBrowserFieldColumns&quot;(
+                  label: &quot;User Browser&quot;,
+                  labelPosition: &quot;ADJACENT&quot;,
+                  instructions: &quot;instructions&quot;,
+                  height: &quot;MEDIUM&quot;,
+                  rootGroup: local!group,
+                  pathValue: local!path,
+                  pathSaveInto: local!path,
+                  selectionValue: local!selectionValue,
+                  selectionSaveInto: local!selectionValue,
+                  readOnly: local!readOnly
+                ),
+                #&quot;SYSTEM_SYSRULES_groupBrowserFieldColumns&quot;(
+                  label: &quot;Group Browser&quot;,
+                  labelPosition: &quot;ADJACENT&quot;,
+                  instructions: &quot;instructions&quot;,
+                  height: &quot;MEDIUM&quot;,
+                  rootGroup: local!group,
+                  pathValue: local!path,
+                  pathSaveInto: local!path,
+                  selectionValue: local!selectionValue,
+                  selectionSaveInto: local!selectionValue,
+                  readOnly: local!readOnly,
+                  hideUsers: local!hideUsers
+                ),
+                #&quot;SYSTEM_SYSRULES_userAndGroupBrowserFieldColumns&quot;(
+                  label: &quot;User and Group Browser&quot;,
+                  labelPosition: &quot;ADJACENT&quot;,
+                  instructions: &quot;instructions&quot;,
+                  height: &quot;MEDIUM&quot;,
+                  rootGroup: local!group,
+                  pathValue: local!path,
+                  pathSaveInto: local!path,
+                  selectionValue: local!selectionValue,
+                  selectionSaveInto: local!selectionValue,
+                  readOnly: local!readOnly
+                )
+              )
+            }
+          ),
+          fn!if(#&quot;SYSTEM_SYSRULES_isNullOrEmpty&quot;(local!selectionValue),
+            {},
+            #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+              label: &quot;Selected&quot;,
+              firstColumnContents: {
+                #&quot;SYSTEM_SYSRULES_textField&quot;(
+                  label: &quot;Path&quot;,
+                  labelPosition: &quot;ADJACENT&quot;,
+                  value: local!path,
+                  readOnly:true
+                ),
+                #&quot;SYSTEM_SYSRULES_textField&quot;(
+                  label: &quot;Selection&quot;,
+                  labelPosition: &quot;ADJACENT&quot;,
+                  value: local!selectionValue,
+                  readOnly: true
+                )
+              }
+            )
+          )
+        }
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

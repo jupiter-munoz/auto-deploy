@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_recordExpression</name>
+        <uuid>_a-0000d994-9bc2-8000-989b-010000010000_2049</uuid>
+        <description>rule for Source</description>
+        <parentUuid>_a-0000d994-9bc2-8000-989b-010000010000_2048</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=with(
+local!pagingInfo:ri!query.pagingInfo,
+local!queryCondition:index(ri!query, &quot;logicalExpression|filter|search&quot;, null),
+local!requestedId: if(
+    and(index(local!queryCondition, &quot;field&quot;, null)=&quot;rp!id&quot;, index(local!queryCondition, &quot;operator&quot;, null)=&quot;=&quot;),
+    index(local!queryCondition, &quot;value&quot;, null),
+    null
+  ),
+local!mockups: if(
+    not(isnull(local!requestedId)),
+   #&quot;_a-0000d994-9bc2-8000-989b-010000010000_2063&quot;(local!requestedId),
+    #&quot;_a-0000d994-ed1f-8000-eb1b-010000010000_2053&quot;()),
+local!mockups
+)</definition>
+        <namedTypedValue>
+            <name>query</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

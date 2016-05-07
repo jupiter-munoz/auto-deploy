@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_httpResponsePreviewPane</name>
+        <uuid>55583df9-06f2-449b-80b1-4b1ece0d4401</uuid>
+        <description></description>
+        <parentUuid>_a-0000d9f3-0972-8000-0018-010000010000_2856</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{&#xD;
+  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+    label: &quot;Test HTTP Request&quot;,&#xD;
+    isCollapsible:fn!false(),&#xD;
+    firstColumnContents: {&#xD;
+      &#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;URL&quot;,&#xD;
+        readOnly: fn!false(),&#xD;
+        value: &quot;https://home.appian.com/suite/webapi/commits/?userID=4&quot;&#xD;
+      ),&#xD;
+    },&#xD;
+    secondColumnContents:{&#xD;
+      #&quot;SYSTEM_SYSRULES_dropdownField&quot;(&#xD;
+        label:&quot;Method&quot;,&#xD;
+        choiceValues:{&quot;Get&quot;},&#xD;
+        choiceLabels:{&quot;Get&quot;},&#xD;
+        value:&quot;Get&quot;&#xD;
+      ),&#xD;
+    }&#xD;
+  ),&#xD;
+  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+    label:&quot;&quot;,&#xD;
+    firstColumnContents:{&#xD;
+      #&quot;SYSTEM_SYSRULES_gridLayout&quot;(&#xD;
+         label: &quot;Query Parameters&quot;,&#xD;
+         /*instructions:&quot;Higher rows in the grid take precedence over lower rows.&quot;,*/&#xD;
+         headerCells: {&#xD;
+           &#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Name&quot;),&#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Value&quot;)&#xD;
+         },&#xD;
+         columnConfigs: {&#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),&#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;)&#xD;
+         },&#xD;
+         rows: {&#xD;
+           /*a!gridRowLayout(&#xD;
+             contents: {&#xD;
+               a!textField(readOnly:fn!true(),align: &quot;LEFT&quot;,value:&quot;userID&quot;),&#xD;
+               a!textField(align: &quot;LEFT&quot;,value:&quot;4&quot;)&#xD;
+             }&#xD;
+           )*/&#xD;
+         }&#xD;
+       ),&#xD;
+       #&quot;SYSTEM_SYSRULES_gridLayout&quot;(&#xD;
+         label: &quot;Path Parameters&quot;,&#xD;
+         /*instructions:&quot;Higher rows in the grid take precedence over lower rows.&quot;,*/&#xD;
+         headerCells: {&#xD;
+           &#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Name&quot;),&#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Value&quot;)&#xD;
+         },&#xD;
+         columnConfigs: {&#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),&#xD;
+           #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;)&#xD;
+         },&#xD;
+         rows: {&#xD;
+           /*a!gridRowLayout(&#xD;
+             contents: {&#xD;
+               a!textField(readOnly:fn!true(),align: &quot;LEFT&quot;,value:&quot;userID&quot;),&#xD;
+               a!textField(align: &quot;LEFT&quot;,value:&quot;4&quot;)&#xD;
+             }&#xD;
+           )*/&#xD;
+         }&#xD;
+       ),&#xD;
+      #&quot;SYSTEM_SYSRULES_gridLayout&quot;(&#xD;
+        label: &quot;Headers&quot;,&#xD;
+        /*instructions:&quot;Higher rows in the grid take precedence over lower rows.&quot;,*/&#xD;
+        headerCells: {&#xD;
+          &#xD;
+          #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Name&quot;),&#xD;
+          #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Value&quot;)&#xD;
+        },&#xD;
+        columnConfigs: {&#xD;
+          #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),&#xD;
+          #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;)&#xD;
+        },&#xD;
+        rows: {&#xD;
+          #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(&#xD;
+            contents: {&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(readOnly:fn!true(),align: &quot;LEFT&quot;,value:&quot;Cache-Control&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(align: &quot;LEFT&quot;,value:&quot;max-age=0&quot;)&#xD;
+            }&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(&#xD;
+            contents: {&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(readOnly:fn!true(),align: &quot;LEFT&quot;,value:&quot;Cache-Control&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(align: &quot;LEFT&quot;,value:&quot;no-cache, no-store&quot;)&#xD;
+            }&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(&#xD;
+            contents: {&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(readOnly:fn!true(),align: &quot;LEFT&quot;,value:&quot;Content-Encoding&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(align: &quot;LEFT&quot;,value:&quot;gzip&quot;)&#xD;
+            }&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(&#xD;
+            contents: {&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(readOnly:fn!true(),align: &quot;LEFT&quot;,value:&quot;Content-Type&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_textField&quot;(align: &quot;LEFT&quot;,value:&quot;application/json&quot;)&#xD;
+            }&#xD;
+          )&#xD;
+        }&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+        label: &quot;Body&quot;,&#xD;
+        readOnly: false,&#xD;
+        value: &quot;&quot;&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
+        primaryButtons:#&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(label:&quot;Test Request&quot;,style:&quot;PRIMARY&quot;)&#xD;
+      )&#xD;
+    }&#xD;
+  ),&#xD;
+  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+    label: &quot;HTTP Response&quot;,&#xD;
+    isCollapsible:fn!false(),&#xD;
+    instructions: &quot;&quot;,&#xD;
+    firstColumnContents: {&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Status Code&quot;,&#xD;
+        value:&quot;200 OK&quot;,&#xD;
+        readOnly:fn!true()&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_gridField&quot;(&#xD;
+        label: &quot;Headers&quot;,&#xD;
+        totalCount:4,&#xD;
+        columns:{&#xD;
+          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+            label:&quot;Name&quot;,&#xD;
+            data:{&#xD;
+              &quot;Cache-Control&quot;,&#xD;
+              &quot;Cache-Control&quot;,&#xD;
+              &quot;Content-Encoding&quot;,&#xD;
+              &quot;Content-Type&quot;&#xD;
+            }&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+            label:&quot;Value&quot;,&#xD;
+            data:{&#xD;
+              &quot;max-age=0&quot;,&#xD;
+              &quot;no-cache, no-store&quot;,&#xD;
+              &quot;gzip&quot;,&#xD;
+              &quot;application/json&quot;&#xD;
+            }&#xD;
+          )&#xD;
+        },&#xD;
+        value:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex:1,batchSize:-1)&#xD;
+      )&#xD;
+    }&#xD;
+  ),&#xD;
+  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+    firstColumnContents:{&#xD;
+      #&quot;SYSTEM_SYSRULES_richTextDisplayField&quot;(&#xD;
+        label:&quot;Body&quot;,&#xD;
+        labelPosition:&quot;COLLAPSED&quot;,&#xD;
+        value:#&quot;SYSTEM_SYSRULES_richTextItem&quot;(&#xD;
+          text:&quot;Body&quot;,&#xD;
+          style:&quot;STRONG&quot;&#xD;
+        )&#xD;
+      )&#xD;
+    },&#xD;
+    secondColumnContents:{&#xD;
+      #&quot;SYSTEM_SYSRULES_checkboxField&quot;(&#xD;
+        labelPosition:&quot;COLLAPSED&quot;,&#xD;
+        align:&quot;RIGHT&quot;,&#xD;
+        /*label:&quot;Body&quot;,*/&#xD;
+        choiceLabels:{&quot;Auto-format&quot;},&#xD;
+        choiceValues:{fn!true()},&#xD;
+        value:null&#xD;
+      ),&#xD;
+      /*&#xD;
+      a!richTextDisplayField(&#xD;
+        label:&quot;Body&quot;,&#xD;
+        labelPosition:&quot;COLLAPSED&quot;,&#xD;
+        value:{&#xD;
+          a!richTextItem(&#xD;
+            text:&quot;Formatted&quot;,&#xD;
+            style:&quot;STRONG&quot;&#xD;
+          ),&#xD;
+          a!richTextItem(&#xD;
+            text:&quot; | &quot;&#xD;
+          ),&#xD;
+          a!richTextItem(&#xD;
+            text:&quot;RAW&quot;,&#xD;
+            style:&quot;NORMAL&quot;,&#xD;
+            link:a!dynamicLink(value:fn!true)&#xD;
+          )&#xD;
+        }&#xD;
+      ),*/&#xD;
+    }&#xD;
+  ),&#xD;
+  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+    firstColumnContents:{&#xD;
+      #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+        label:&quot;Body&quot;,&#xD;
+        labelPosition:&quot;COLLAPSED&quot;,&#xD;
+        value: &quot;{&#xD;
+          &quot;&quot;startIndex&quot;&quot;: 1,&#xD;
+          &quot;&quot;batchSize&quot;&quot;: 5,&#xD;
+          &quot;&quot;sort&quot;&quot;: [&#xD;
+            {&#xD;
+              &quot;&quot;field&quot;&quot;: &quot;&quot;desc&quot;&quot;,&#xD;
+              &quot;&quot;ascending&quot;&quot;: true&#xD;
+            }&#xD;
+          ],&#xD;
+          &quot;&quot;totalCount&quot;&quot;: 364,&#xD;
+          &quot;&quot;data&quot;&quot;: [&#xD;
+            {&#xD;
+              &quot;&quot;version&quot;&quot;: 8,&#xD;
+              &quot;&quot;featureOwner&quot;&quot;: 7,&#xD;
+              &quot;&quot;jiraLink&quot;&quot;: &quot;&quot;https://issues.appian.com/browse/AN-46236&quot;&quot;,&#xD;
+              &quot;&quot;notes&quot;&quot;: &quot;&quot;The feature is ready/ has been code reviewed and verified by Rodrigo and Leslie/ CI jobs are green and is ready to go to master.&quot;&quot;,&#xD;
+              &quot;&quot;isStretch&quot;&quot;: false,&#xD;
+              &quot;&quot;percentComplete&quot;&quot;: 90,&#xD;
+              &quot;&quot;sprintId&quot;&quot;: 38,&#xD;
+              &quot;&quot;desc&quot;&quot;: &quot;&quot;2-column support on Record Detail Views for all UIs&quot;&quot;,&#xD;
+              &quot;&quot;id&quot;&quot;: 305&#xD;
+            },&#xD;
+            {&#xD;
+              &quot;&quot;version&quot;&quot;: 3,&#xD;
+              &quot;&quot;featureOwner&quot;&quot;: 9,&#xD;
+              &quot;&quot;jiraLink&quot;&quot;: &quot;&quot;https://issues.appian.com/browse/AN-46127&quot;&quot;,&#xD;
+              &quot;&quot;notes&quot;&quot;: &quot;&quot;&quot;&quot;,&#xD;
+              &quot;&quot;isStretch&quot;&quot;: true,&#xD;
+              &quot;&quot;percentComplete&quot;&quot;: 0,&#xD;
+              &quot;&quot;sprintId&quot;&quot;: 34,&#xD;
+              &quot;&quot;desc&quot;&quot;: &quot;&quot;Actions Page&quot;&quot;,&#xD;
+              &quot;&quot;id&quot;&quot;: 265&#xD;
+            },&#xD;
+            {&#xD;
+              &quot;&quot;version&quot;&quot;: 2,&#xD;
+              &quot;&quot;featureOwner&quot;&quot;: 8,&#xD;
+              &quot;&quot;jiraLink&quot;&quot;: &quot;&quot;&quot;&quot;,&#xD;
+              &quot;&quot;notes&quot;&quot;: &quot;&quot;Won't get done/ I was not able to get to it. I spent extra time in extending the test coverage for the date&amp;time component.&quot;&quot;,&#xD;
+              &quot;&quot;isStretch&quot;&quot;: true,&#xD;
+              &quot;&quot;percentComplete&quot;&quot;: 0,&#xD;
+              &quot;&quot;sprintId&quot;&quot;: 13,&#xD;
+              &quot;&quot;desc&quot;&quot;: &quot;&quot;Activity Chaining (Mobile Parity)--round-trip&quot;&quot;,&#xD;
+              &quot;&quot;id&quot;&quot;: 93&#xD;
+            },&#xD;
+            {&#xD;
+              &quot;&quot;version&quot;&quot;: 6,&#xD;
+              &quot;&quot;featureOwner&quot;&quot;: 8,&#xD;
+              &quot;&quot;jiraLink&quot;&quot;: &quot;&quot;https://issues.appian.com/browse/AN-45644&quot;&quot;,&#xD;
+              &quot;&quot;notes&quot;&quot;: &quot;&quot;&quot;&quot;,&#xD;
+              &quot;&quot;isStretch&quot;&quot;: false,&#xD;
+              &quot;&quot;percentComplete&quot;&quot;: 100,&#xD;
+              &quot;&quot;sprintId&quot;&quot;: 18,&#xD;
+              &quot;&quot;desc&quot;&quot;: &quot;&quot;Activity Chaining (Mobile Parity)--round-trip&quot;&quot;,&#xD;
+              &quot;&quot;id&quot;&quot;: 129&#xD;
+            },&#xD;
+            {&#xD;
+              &quot;&quot;version&quot;&quot;: 5,&#xD;
+              &quot;&quot;featureOwner&quot;&quot;: 7,&#xD;
+              &quot;&quot;jiraLink&quot;&quot;: &quot;&quot;https://issues.appian.com/browse/AN-45236&quot;&quot;,&#xD;
+              &quot;&quot;notes&quot;&quot;: &quot;&quot;This fix is within the activity chaining feature. When we merge activity chaining we will have the fix for this one.&quot;&quot;,&#xD;
+              &quot;&quot;isStretch&quot;&quot;: true,&#xD;
+              &quot;&quot;percentComplete&quot;&quot;: 100,&#xD;
+              &quot;&quot;sprintId&quot;&quot;: 18,&#xD;
+              &quot;&quot;desc&quot;&quot;: &quot;&quot;Activity chaining to start forms from user input tasks causes error alert&quot;&quot;,&#xD;
+              &quot;&quot;id&quot;&quot;: 138&#xD;
+            }&#xD;
+          ],&#xD;
+          &quot;&quot;identifiers&quot;&quot;: [&#xD;
+            305,&#xD;
+            265,&#xD;
+            93,&#xD;
+            129,&#xD;
+            138&#xD;
+          ]&#xD;
+&#xD;
+        }&quot;,&#xD;
+        readOnly:fn!true()&#xD;
+      )&#xD;
+    }&#xD;
+  )&#xD;
+}</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

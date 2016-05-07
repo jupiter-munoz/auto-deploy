@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_getMockupsByAll</name>
+        <uuid>_a-0000d994-ed1f-8000-eb1b-010000010000_2053</uuid>
+        <description></description>
+        <parentUuid>_a-0000d994-9bc2-8000-989b-010000010000_2048</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>todataSubset({{mockupID:1,name:&quot;Application Designer - Missing Dependencies&quot;,description:&quot;&quot;},
+{mockupID:2,name:&quot;Record Type Designer&quot;, description:&quot;&quot;},
+{mockupID:3,name:&quot;Client Certificate&quot;,description:&quot;&quot;},
+{mockupID:4,name:&quot;Data Integration&quot;,description:&quot;&quot;},
+{mockupID:5,name:&quot;Data Integration With Tabs&quot;,description:&quot;&quot;},
+{mockupID:6,name:&quot;International&quot;,description:&quot;International settings mockup&quot;},
+{mockupID:7,name:&quot;User Start Pages&quot;,description:&quot;User landing page config&quot;},
+{mockupID:8,name:&quot;Admin Console: Passwords&quot;,description:&quot;&quot;},
+{mockupID:9,name:&quot;Web APIs&quot;,description:&quot;&quot;},
+{mockupID:10,name:&quot;Ryder&quot;,description:&quot;&quot;},
+{mockupID:11,name:&quot;Sites&quot;,description:&quot;&quot;},
+{mockupID:12,name:&quot;Sites:Modal&quot;,description:&quot;&quot;},
+{mockupID:13,name:&quot;Admin Console Rule Performance&quot;,description:&quot;&quot;}
+})</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

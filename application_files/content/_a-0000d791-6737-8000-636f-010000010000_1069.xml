@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>BARCHART_demo</name>
+        <uuid>_a-0000d791-6737-8000-636f-010000010000_1069</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6d7-6af8-8000-66c6-010000010000_944</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>
+'type!{http://www.appian.com/ae/types/2009}FormLayout'(content: {
+  'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+    columns: {
+      'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+        contents: {
+          'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+            content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+              columns: {
+                'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                  contents: {
+                    'type!{http://www.appian.com/ae/types/2009}BarChart'(
+                      label: &quot;Opportunities by Type&quot;,
+                      instructions: &quot;allowDecimals set to false&quot;,
+                      categories: {&quot;Americas&quot;, &quot;EMEA&quot;, &quot;APAC&quot;},
+                      series: {
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Maintenance&quot;, data: {19, 8, null}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Software (Cloud)&quot;, data: {11, 16, 10}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Software (Perpetual)&quot;, data: {14, 12, 7})
+                      },
+                      yAxisTitle: &quot;Active Opportunities&quot;,
+                      showDataLabels: true,
+                      showLegend: null
+                    )
+                  }
+                )
+              }
+            )
+          ),
+          'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+            content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+              columns: {
+                'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                  contents: {
+                    'type!{http://www.appian.com/ae/types/2009}BarChart'(
+                      label: &quot;Negative Values&quot;,
+                      categories: {&quot;Americas&quot;, &quot;EMEA&quot;, &quot;APAC&quot;},
+                      series: {
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Maintenance&quot;, data: {19, 8, null}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Professional Services&quot;, data: {-15, 9, 6}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Software (Cloud)&quot;, data: {11, 16, -10}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Software (Perpetual)&quot;, data: {14, 12, 7})
+                      },
+                      yAxisTitle: &quot;Active Opportunities&quot;,
+                      showDataLabels: true
+                    )                    
+                  }
+                ),
+                'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+                  contents: {
+                    'type!{http://www.appian.com/ae/types/2009}BarChart'(
+                      label: &quot;Label Spread, Long Labels&quot;,
+                      categories: {&quot;North, Central, and South America&quot;, &quot;Europe, Middle East, Africa&quot;, &quot;Asia Pacific&quot;},
+                      series: {
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(data: {19, 8, 6}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(data: {1543141, 9, 10}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(data: {11, 16, 7}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(data: {14, 125315, null})
+                      },
+                      yAxisTitle: &quot;Active Opportunities&quot;,
+                      showLegend: false,
+                      showDataLabels: true                        
+                    ),
+                    'type!{http://www.appian.com/ae/types/2009}BarChart'(
+                      label: &quot;Extra Series Data&quot;,
+                      instructions: &quot;Each series has an extra value. An extra group of Bars is rendered for that virtual category and it is shown with a default label.&quot;,
+                      categories: {&quot;Americas&quot;, &quot;EMEA&quot;, &quot;APAC&quot;},
+                      series: {
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Maintenance&quot;, data: {19, 8, null, 8}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Professional Services&quot;, data: {15, 9, 6, 6}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Software (Cloud)&quot;, data: {11, 16, 10, 4}),
+                        'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(label: &quot;Software (Perpetual)&quot;, data: {14, 12, 7, 2})
+                      },
+                      yAxisTitle: &quot;Active Opportunities&quot;,
+                      allowDecimalAxisLabels: true,
+                      showDataLabels: true
+                    )                     
+                  }
+                )
+              }
+            )
+          )
+        }
+      )
+    }
+  )
+})
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

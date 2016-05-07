@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportdatetime</name>
+        <uuid>_a-0000d85e-220a-8000-15a7-010000010000_1746</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!value,
+  local!start, /*: fn!datetime(2011,4,15,12,34,56),*/
+  local!end,
+  'type!{http://www.appian.com/ae/types/2009}SectionLayout'( content:{
+    'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+      columns: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+          contents: {
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Start Date&quot;,
+              instructions: &quot;Setting this field will change End Date to be one week later&quot;,
+              value: local!start,
+              saveInto: {
+                local!start,
+                local!end /*&lt;&lt; fn!todatetime &lt;&lt;fn!caladddays(_,5)*/
+              }
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Start Date&quot;,
+              value: local!start,
+              readOnly: true
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;End Date&quot;,
+              instructions: &quot;Must be one week after Start Date&quot;,
+              value: local!end,
+              saveInto: local!end,
+              validations: if(
+                and(not(isnull(local!end)), not(isnull(local!start)), not(todate(fn!caladddays(local!start,5))=todate(local!end))),
+                &quot;End Date must be 7 days after start date&quot;,
+                &quot;&quot;
+              )
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              value: null(),
+              saveInto: local!value
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Default Value&quot;,
+              instructions: &quot;Date should be 15 April 2011&quot;,
+              value: fn!datetime(2011,4,15,12,34,56),
+              saveInto: local!value
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Default Read-only&quot;,
+              instructions: &quot;Date should be 25 December 2011 at 1:23&quot;,
+              value: fn!datetime(2011,12,25,12,34,56),
+              saveInto: local!value
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Read-only, No Default&quot;,
+              readOnly: true,
+              saveInto: local!value
+            ),
+           #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Disabled, No Default&quot;,
+              disabled: true,
+              saveInto: local!value
+            ),
+           #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Default Read-only and Disabled&quot;,
+              disabled: true,
+              readOnly: true,
+              instructions: &quot;Default is 17 April 2014&quot;,
+              value: fn!datetime(2014,4,17,12,34,56),
+              saveInto: local!value
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Default Value set from now()&quot;,
+              value: now(),
+              saveInto: local!value
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Required&quot;,
+              required: true,
+              saveInto: local!value
+            ),/*
+            type!DateTimePickerField(
+              label: &quot;Invalid Value (Not a Date)&quot;,
+              value: {&quot;date&quot;, &quot;time&quot;},
+              instructions: &quot;Input is {'mydate', 'mytime'}&quot;,
+              saveInto: local!value
+            ),*/
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Null Input&quot;,
+              value: null,
+              instructions: &quot;Input is null&quot;,
+              saveInto: local!value
+            ),
+            #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(
+              label: &quot;Validation&quot;,
+              value: fn!datetime(2014,4,17,12,34,56),
+              instructions: &quot;There should be two validation messages here&quot;,
+              validations: {
+                &quot;Validation error message&quot;,
+                &quot;Another validation error message&quot;
+              },
+              saveInto: local!value
+            )
+          }
+        )
+      }
+    )
+  })
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

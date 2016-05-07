@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>uiCommits</name>
+        <uuid>_a-0000d566-475b-8000-345d-010000010000_614</uuid>
+        <description>This is the default UI rule used by the 'Commits' Record.</description>
+        <parentUuid>_a-0001d554-e2d4-8000-e2d4-360000360000_75</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(&#xD;
+  firstColumnContents: {&#xD;
+    #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+      label: &quot;Sprint Id&quot;,&#xD;
+      value: rf!sprintId,&#xD;
+      readOnly: true&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+      label: &quot;% Complete&quot;,&#xD;
+      value: rf!percentComplete,&#xD;
+      readOnly: true&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+      label: &quot;Is Stretch&quot;,&#xD;
+      value: rf!isStretch,&#xD;
+      readOnly: true&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+      label: &quot;Notes&quot;,&#xD;
+      value: rf!notes,&#xD;
+      readOnly: true&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+      label: &quot;Jira Link&quot;,&#xD;
+      links: {&#xD;
+        #&quot;SYSTEM_SYSRULES_safeLink&quot;(&#xD;
+          label: rf!jiraLink,&#xD;
+          uri: rf!jiraLink&#xD;
+        )&#xD;
+      }&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_integerField&quot;(&#xD;
+      label: &quot;Version&quot;,&#xD;
+      value: rf!version,&#xD;
+      readOnly: true&#xD;
+    )&#xD;
+  }&#xD;
+)&#xD;
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportTwoColumnUI</name>
+        <uuid>_a-0000d71d-822e-8000-7e17-010000010000_1456</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+  'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Industry&quot;, value: &quot;Retail&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Region&quot;, value: &quot;North America Commercial&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Location&quot;, value: &quot;Seattle, WA&quot;, instructions: &quot;Primary location for performance of work&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Functional Areas&quot;, value: &quot;Finance/Legal&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Label, No Value&quot;, instructions: &quot;Instructions&quot;),
+    'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+      label: &quot;One-Column Section&quot;,
+      content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+          'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Notes&quot;, value: &quot;Bacon ipsum dolor sit amet shank tongue ball tip brisket sirloin hamburger frankfurter. Pork belly drumstick shank, tenderloin tongue capicola doner t-bone kielbasa venison cow ball tip corned beef. Ham hock flank ham ball tip pastrami. Ham hock rump brisket chicken meatloaf.&quot;)
+        })
+      })
+    )
+  }),
+  'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Competitors&quot;, value: &quot;IBM/Lombardi&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Client Since&quot;, value: &quot;Apr 15, 2009&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Integrations&quot;, value: &quot;Database, Custom System, Web Services&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Stock Symbol&quot;, value: &quot;AMZN&quot;),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, value: &quot;Value, but no label&quot;),
+    'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+      label: &quot;Two-Column Section&quot;,
+      content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+          'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Left-Side Field&quot;, value: &quot;Hello world&quot;)
+        }),
+        'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+          'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, label: &quot;Right-Side Field&quot;, value: &quot;This two-column section is flattened into one column because it is contained within a two-column form&quot;)
+        })
+      })
+    )
+  })
+})</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

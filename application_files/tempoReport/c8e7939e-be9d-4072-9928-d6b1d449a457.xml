@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Link Component" a:uuid="c8e7939e-be9d-4072-9928-d6b1d449a457">
+        <a:description>Various uses of the LinkField to match the mockups</a:description>
+        <a:uiExpr>=#&quot;_a-0001d709-7a95-8000-7a95-6b00006b0000_942&quot;()</a:uiExpr>
+        <a:urlStub>linkField</a:urlStub>
+    </tempoReport>
+    <roleMap/>
+</tempoReportHaul>

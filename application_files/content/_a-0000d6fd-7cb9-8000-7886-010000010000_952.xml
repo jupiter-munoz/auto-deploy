@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportAppianSoftwareDocumentation</name>
+        <uuid>_a-0000d6fd-7cb9-8000-7886-010000010000_952</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>'type!{http://www.appian.com/ae/types/2009}FormLayout'(
+  content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+      #&quot;_a-0000d73d-f7dd-8000-4594-010000010000_1052&quot;(),
+      'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+        label: &quot;About&quot;,
+        content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+          'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Industry&quot;, value: &quot;Retail&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Region&quot;, value: &quot;North America Commercial&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Location&quot;, value: &quot;Seattle, WA&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Functional Areas&quot;, value: &quot;Finance/Legal&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Sales Executive&quot;, value: &quot;Scott Ulrichs&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}ParagraphField'(label: &quot;Why Appian&quot;, value: &quot;The quantity of beer, too, is very large, 10,800 barrels. Now, as those polar fisheries could only be prosecuted in the short summer of that climate, so that the whole cruise of one of these Dutch whalemen, including the short voyage to and from the Spitzbergen sea, did not much exceed three months, say, and reckoning 30 men to each of their fleet of 180 sail, we have 5,400 Low Dutch seamen in all; therefore, I say, we have precisely two barrels of beer per man, for a twelve weeks' allowance, exclusive of his fair proportion of that 550 ankers of gin.&quot;, readOnly: true)
+          }),
+          'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Competitors&quot;, value: &quot;IBM/Lombardi&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Client Since&quot;, value: &quot;Apr 15, 2009&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Number of User Licenses&quot;, value: &quot;123&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Integrations&quot;, value: &quot;Database, Custom System, Web Services&quot;, readOnly: true),
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Stock Symbol&quot;, value: &quot;AMZN&quot;, readOnly: true)
+          })
+        })
+      )
+    })
+  })
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

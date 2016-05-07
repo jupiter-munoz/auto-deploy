@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:appian:test:rule-exceptions"
+  xmlns:tns="urn:appian:test:rule-exceptions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="BasicFoo">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="id" type="xsd:int"/>
+      <xsd:element form="qualified" name="name" type="xsd:string"/>
+      <xsd:element form="qualified" name="fooDate" type="xsd:date"/>
+      <xsd:element form="qualified" name="foolean" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

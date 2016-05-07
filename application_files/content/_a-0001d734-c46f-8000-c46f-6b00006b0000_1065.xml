@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportTextField</name>
+        <uuid>_a-0001d734-c46f-8000-c46f-6b00006b0000_1065</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>
+=load(
+ local!a,
+ local!b: &quot;&quot;&quot;Quelala being the first owner of the Golden Cap,&quot;&quot; replied the Monkey, &quot;&quot;he was the first to lay his wishes upon us. As his bride could not bear the sight of us, he called us all to him in the forest after he had married her and ordered us always to keep where she could never again set eyes on a Winged Monkey, which we were glad to do, for we were all afraid of her.&quot;&quot;&quot;,
+ local!c: &quot;No label or instructions&quot;,
+ local!d: char(9) &amp; &quot;One tab before.          10 spaces in between. 2 line breaks following this:&quot; &amp; char(10) &amp; char(10) &amp; &quot;  2 space indent.&quot; &amp; char(9) &amp; &quot;One tab in between.&quot;,
+ local!e: &quot;$100,200.20&quot;,
+ local!betterDollarFn: lambda_appian_internal(
+    dollarValue,
+    if(isnull(dollarValue), &quot;&quot;, dollar(dollarValue))
+  ),
+ 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+   'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+     'type!{http://www.appian.com/ae/types/2009}SectionLayout'(content: {
+       'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+         'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Standard Text&quot;,
+             instructions: &quot;Text instructions&quot;,
+             validations: {
+               'type!{http://www.appian.com/ae/types/2009}ValidationMessage'(
+                 message: if(true, &quot;Validation error message&quot;, &quot;&quot;)
+               )},
+             value: local!a,
+             saveInto: local!a
+             ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Default Value&quot;,
+             value: local!b,
+             saveInto: local!b
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             value: local!c,
+             saveInto: local!c
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Disabled&quot;,
+             disabled: true,
+             readOnly: false,
+             value: &quot;With default value&quot;
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Disabled Long Default&quot;,
+             disabled: true,
+             readOnly: false,
+             value: local!b
+           )
+         }),
+         'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Read-Only&quot;,
+             readOnly: true,
+             value: local!b
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Read-Only &amp; Disabled&quot;,
+             instructions: &quot;Setting a read-only text component as disabled is redundant&quot;,
+             readOnly: true,
+             disabled: true,
+             value: &quot;Hello World&quot;
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Read-Only No Value&quot;,
+             instructions: &quot;Instructions for read-only field without a value&quot;,
+             readOnly: true
+           )
+         })
+       })
+     }),
+     'type!{http://www.appian.com/ae/types/2009}SectionLayout'(label: &quot;One Column Section&quot;, content: {
+       'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+         'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;One-Column Editable&quot;,
+             value: local!b,
+             saveInto: local!b
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;One-Column Read-Only&quot;,
+             readOnly: true,
+             value: local!b
+           )
+         })
+       })
+     }),
+     'type!{http://www.appian.com/ae/types/2009}SectionLayout'(label: &quot;Preserve Formatting&quot;, content: {
+       'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+         'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Leading and Intermediate Spaces&quot;,
+             instructions: &quot;Browser ignores line breaks&quot;,
+             value: local!d,
+             saveInto: local!d
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Leading and Intermediate Spaces&quot;,
+             instructions: &quot;Browser ignores tab character for read-only&quot;,
+             readOnly: true,
+             value: local!d
+           )
+         })
+       })
+     }),
+     #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      label: &quot;Value Alignment&quot;,
+      firstColumnContents: {
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Enter Amount&quot;,
+             instructions: &quot;align: not configured&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Enter Amount&quot;,
+             instructions: &quot;align: null&quot;,
+             align: null,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Enter Amount&quot;,
+             instructions: &quot;align: LEFT&quot;,
+             align: &quot;LEFT&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Enter Amount&quot;,
+             instructions: &quot;align: CENTER&quot;,
+             align: &quot;CENTER&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Enter Amount&quot;,
+             instructions: &quot;align: RIGHT&quot;,
+             align: &quot;RIGHT&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Disabled Amount&quot;,
+             instructions: &quot;align: null&quot;,
+             disabled: true,
+             align: null,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Disabled Amount&quot;,
+             instructions: &quot;align: LEFT&quot;,
+             disabled: true,
+             align: &quot;LEFT&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Disabled Amount&quot;,
+             instructions: &quot;align: CENTER&quot;,
+             disabled: true,
+             align: &quot;CENTER&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Disabled Amount&quot;,
+             instructions: &quot;align: RIGHT&quot;,
+             disabled: true,
+             align: &quot;RIGHT&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           )
+        },
+        secondColumnContents: {
+          'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Read-Only Amount&quot;,
+             instructions: &quot;align: null&quot;,
+             readOnly: true,
+             align: null,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Read-Only Amount&quot;,
+             instructions: &quot;align: LEFT&quot;,
+             readOnly: true,
+             align: &quot;LEFT&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Read-Only Amount&quot;,
+             instructions: &quot;align: CENTER&quot;,
+             readOnly: true,
+             align: &quot;CENTER&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           ),
+           'type!{http://www.appian.com/ae/types/2009}TextField'(
+             label: &quot;Read-Only Amount&quot;,
+             instructions: &quot;align: RIGHT&quot;,
+             readOnly: true,
+             align: &quot;RIGHT&quot;,
+             value: local!betterDollarFn(local!e),
+             saveInto: local!e &lt;&lt; fn!todecimal(_)
+           )
+        }
+      )
+     })
+   })
+)
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.appian.com/tech/test"
+  xmlns:tns="http://www.appian.com/tech/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="level-020">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="id" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column @Id @GeneratedValue</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element form="qualified" name="name" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

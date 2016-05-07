@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <recordType name="Record Icons" a:uuid="378b80f1-92ed-4729-bd63-a2315e88e488">
+        <a:pluralName>Record Icons</a:pluralName>
+        <a:description>Various icons for records</a:description>
+        <a:urlStub>icon</a:urlStub>
+        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="0002d72b-9455-8000-4140-010000010000"/>
+        <a:listViewTemplateExpr>#&quot;SYSTEM_SYSRULES_listViewItem&quot;(&#xD;
+  image:rf!icon, &#xD;
+  title:rf!name, &#xD;
+  details:rf!description&#xD;
+)</a:listViewTemplateExpr>
+        <a:detailViewCfg>
+            <a:nameExpr>=&quot;Summary&quot;</a:nameExpr>
+            <a:uiExpr>=#&quot;_a-0000d72b-460c-8000-413f-010000010000_1200&quot;()</a:uiExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:urlStub>summary</a:urlStub>
+        </a:detailViewCfg>
+        <a:defaultSortInfo>
+            <field>name</field>
+            <ascending>true</ascending>
+        </a:defaultSortInfo>
+        <a:isSystem>false</a:isSystem>
+        <a:layoutType>FEED</a:layoutType>
+        <a:security>16383</a:security>
+    </recordType>
+    <roleMap/>
+</recordTypeHaul>

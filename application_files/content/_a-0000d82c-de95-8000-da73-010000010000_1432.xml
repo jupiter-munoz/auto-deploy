@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportDateField</name>
+        <uuid>_a-0000d82c-de95-8000-da73-010000010000_1432</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>
+=load(
+  local!value: today(),
+  local!start,
+  local!end,
+  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+    firstColumnContents: {
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Start Date&quot;,
+        instructions: &quot;Setting this field will change End Date to be one week later&quot;,
+        value: local!start,
+        saveInto: {
+          local!start,
+          local!end &lt;&lt; fn!todate &lt;&lt;fn!caladddays(_,5)
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;End Date&quot;,
+        instructions: &quot;Must be one week after Start Date&quot;,
+        value: local!end,
+        saveInto: local!end,
+        validations: if(
+          and(not(isnull(local!end)), not(isnull(local!start)), not(todate(fn!caladddays(local!start,5))=todate(local!end))),
+          &quot;End Date must be 7 days after start date&quot;,
+          &quot;&quot;
+        )
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        value: null(),
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;No Instructions&quot;,
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        instructions: &quot;No Label, with instructions&quot;,
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Label And Instructions&quot;,
+        instructions: &quot;Instructions&quot;,
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Default Value&quot;,
+        instructions: &quot;Date should be 15 April 2011&quot;,
+        value: date(2011,4,15),
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Default Read-only&quot;,
+        instructions: &quot;Date should be 25 December 2011&quot;,
+        value: date(2011,12,25),
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Default from Constant&quot;,
+        instructions: &quot;Date should be 20 July 2011&quot;,
+        value: #&quot;_a-0000d4ad-7831-8000-bfb8-680000680000_1376&quot;,
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Default from date and time constant&quot;,
+        instructions: &quot;Date and time should be 20 December 2012 at 3 am. The time should fall off.&quot;,
+        value: toDate(#&quot;_a-0000d4ad-7831-8000-bfb8-680000680000_1377&quot;),
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Read-only, No Default&quot;,
+        readOnly: true,
+        saveInto: local!value
+      ),
+     #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Disabled, No Default&quot;,
+        disabled: true,
+        saveInto: local!value
+      ),
+     #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Default Read-only and Disabled&quot;,
+        disabled: true,
+        readOnly: true,
+        instructions: &quot;Default is 17 April 2014&quot;,
+        value: date(2014,4,17),
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Default Value set from today()&quot;,
+        value: today(),
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Required&quot;,
+        required: true,
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Invalid Value (Not a Date)&quot;,
+        value: &quot;abcdefg&quot;,
+        instructions: &quot;Input is abcdefg&quot;,
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Null Input&quot;,
+        value: null(),
+        instructions: &quot;Input is null()&quot;,
+        saveInto: local!value
+      ),
+      #&quot;SYSTEM_SYSRULES_dateField&quot;(
+        label: &quot;Validation&quot;,
+        value: null(),
+        instructions: &quot;There should be two validation messages here&quot;,
+        validations: {
+          &quot;Validation error message&quot;,
+          &quot;Another validation error message&quot;
+        },
+        saveInto: local!value
+      )
+    },
+    secondColumnContents: {
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Enter Date&quot;,
+        instructions: &quot;align: not configured&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Enter Date&quot;,
+        instructions: &quot;align: null&quot;,
+        align: null,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Enter Date&quot;,
+        instructions: &quot;align: LEFT&quot;,
+        align: &quot;LEFT&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Enter Date&quot;,
+        instructions: &quot;align: CENTER&quot;,
+        align: &quot;CENTER&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Enter Date&quot;,
+        instructions: &quot;align: RIGHT&quot;,
+        align: &quot;RIGHT&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Disabled Date&quot;,
+        instructions: &quot;align: not configured&quot;,
+        disabled: true,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Disabled Date&quot;,
+        instructions: &quot;align: null&quot;,
+        disabled: true,
+        align: null,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Disabled Date&quot;,
+        instructions: &quot;align: LEFT&quot;,
+        disabled: true,
+        align: &quot;LEFT&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Disabled Date&quot;,
+        instructions: &quot;align: CENTER&quot;,
+        disabled: true,
+        align: &quot;CENTER&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Disabled Date&quot;,
+        instructions: &quot;align: RIGHT&quot;,
+        disabled: true,
+        align: &quot;RIGHT&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Read-only Date&quot;,
+        instructions: &quot;align: not configured&quot;,
+        readOnly: true,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Read-only Date&quot;,
+        instructions: &quot;align: null&quot;,
+        readOnly: true,
+        align: null,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Read-only Date&quot;,
+        instructions: &quot;align: LEFT&quot;,
+        readOnly: true,
+        align: &quot;LEFT&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Read-only Date&quot;,
+        instructions: &quot;align: CENTER&quot;,
+        readOnly: true,
+        align: &quot;CENTER&quot;,
+        value: local!value,
+        saveInto: local!value
+      ),
+      'type!{http://www.appian.com/ae/types/2009}DateField'(
+        label: &quot;Read-only Date&quot;,
+        instructions: &quot;align: RIGHT&quot;,
+        readOnly: true,
+        align: &quot;RIGHT&quot;,
+        value: local!value,
+        saveInto: local!value
+      )
+    }
+  )
+)
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

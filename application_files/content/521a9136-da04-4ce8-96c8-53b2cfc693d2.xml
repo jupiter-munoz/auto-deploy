@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_queryBuilderSAILPage</name>
+        <uuid>521a9136-da04-4ce8-96c8-53b2cfc693d2</uuid>
+        <description></description>
+        <parentUuid>_a-0000d9e6-76b8-8000-70e7-010000010000_2299</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=
+/*http://kindohm.github.io/knockout-query-builder/*/
+load(local!newFilter,
+  local!test,
+  #&quot;SYSTEM_SYSRULES_formLayout&quot;(
+    label: &quot;&quot;,
+    instructions: &quot;&quot;,
+    firstColumnContents: {
+      
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;Query Builder&quot;,
+        isCollapsible:fn!true(),
+        firstColumnContents:{
+          #&quot;SYSTEM_SYSRULES_pickerFieldCustom&quot;(
+            label: &quot;Select Data Store Entity&quot;,
+            instructions:&quot;&quot;,
+            selectedLabels:&quot;purchaseRequest&quot;,
+            value:&quot;purchaseRequest&quot;
+          )
+        },
+        secondColumnContents:{
+          #&quot;SYSTEM_SYSRULES_radioButtonFieldByIndex&quot;(
+            label:&quot;Filters Operator&quot;,
+            instructions:&quot;Specify an operator to apply to the filters&quot;,
+            choiceLabels:{&quot;And&quot;,&quot;Or&quot;},
+            value:1
+          )
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;&quot;,
+        firstColumnContents:{
+          #&quot;SYSTEM_SYSRULES_gridLayout&quot;(
+              label: &quot;Filters&quot;,
+              /*instructions:&quot;Higher rows in the grid take precedence over lower rows.&quot;,*/
+              headerCells: {
+                
+                #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Field&quot;),
+                #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Operator&quot;),
+                #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Rule Input&quot;),
+                /*a!gridLayoutHeaderCell(label: &quot;&quot;),
+                a!gridLayoutHeaderCell(label: &quot;&quot;),
+                a!gridLayoutHeaderCell(label: &quot;&quot;),*/
+              },
+              columnConfigs: {
+                #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),
+                #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),
+                #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),
+               
+                /*a!gridLayoutColumnConfig(width: &quot;NARROW&quot;),
+                a!gridLayoutColumnConfig(width: &quot;NARROW&quot;),
+                a!gridLayoutColumnConfig(width: &quot;NARROW&quot;)*/
+              },
+              rows: {
+                #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(
+                  contents: {
+                     
+                    #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;id&quot;},choiceValues:{&quot;id&quot;},value:&quot;id&quot;),
+                    #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{{&quot;equals&quot;,&quot;less than&quot;,&quot;less than or equal to&quot;,&quot;greater than&quot;,&quot;greater than or equal to&quot;,&quot;does not equal&quot;,&quot;contains&quot;,&quot;does not contain&quot;}},choiceValues:{&quot;equals&quot;,&quot;less than&quot;,&quot;less than or equal to&quot;,&quot;greater than&quot;,&quot;greater than or equal to&quot;,&quot;does not equal&quot;,&quot;contains&quot;,&quot;does not contain&quot;},value:&quot;equals&quot;),
+                   #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;ri!id&quot;},choiceValues:{&quot;id&quot;},value:&quot;id&quot;),
+            
+                   
+                   /* a!imageField(images:a!documentImage(document:a!iconIndicator(&quot;MOVE_UP&quot;)),size:&quot;ICON&quot;),
+                    a!imageField(images:a!documentImage(document:a!iconIndicator(&quot;MOVE_DOWN&quot;)),size:&quot;ICON&quot;),
+                    a!imageField(images:a!documentImage(document:a!iconIndicator(&quot;REMOVE&quot;)),size:&quot;ICON&quot;)*/
+                  }
+                ),
+                if(local!newFilter,
+                  #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(
+                  contents: {
+                     
+                    #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;quantity&quot;},choiceValues:{&quot;quantity&quot;},value:&quot;quantity&quot;),
+                    #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{{&quot;equals&quot;,&quot;less than&quot;,&quot;less than or equal to&quot;,&quot;greater than&quot;,&quot;greater than or equal to&quot;,&quot;does not equal&quot;,&quot;contains&quot;,&quot;does not contain&quot;}},choiceValues:{&quot;equals&quot;,&quot;less than&quot;,&quot;less than or equal to&quot;,&quot;greater than&quot;,&quot;greater than or equal to&quot;,&quot;does not equal&quot;,&quot;contains&quot;,&quot;does not contain&quot;},value:&quot;greater than or equal to&quot;),
+                   #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;ri!quantity&quot;},choiceValues:{&quot;ri!quantity&quot;},value:&quot;ri!quantity&quot;),
+            
+                   
+                   /* a!imageField(images:a!documentImage(document:a!iconIndicator(&quot;MOVE_UP&quot;)),size:&quot;ICON&quot;),
+                    a!imageField(images:a!documentImage(document:a!iconIndicator(&quot;MOVE_DOWN&quot;)),size:&quot;ICON&quot;),
+                    a!imageField(images:a!documentImage(document:a!iconIndicator(&quot;REMOVE&quot;)),size:&quot;ICON&quot;)*/
+                  }
+                ),
+                {}
+                )
+              }
+            ),
+          #&quot;SYSTEM_SYSRULES_linkField&quot;(
+            labelPosition: &quot;COLLAPSED&quot;,
+            links: {
+              #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(label: &quot;+ New Filter&quot;,
+                value:fn!true(),
+                saveInto:local!newFilter
+              )
+            }
+          )
+        },
+        secondColumnContents:{
+          
+        }
+      ),
+      load(local!sortResults,
+        {  
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            label:&quot;&quot;,
+            firstColumnContents:{
+              #&quot;SYSTEM_SYSRULES_checkboxField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                choiceLabels:{&quot;Sort results&quot;},
+                choiceValues:{fn!true()},
+                value:local!sortResults,
+                saveInto:local!sortResults
+              )
+            },
+            secondColumnContents:{
+             
+            }
+          ),
+          if(local!sortResults,
+            #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+              label:&quot;&quot;,
+              firstColumnContents:{
+                #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                  label:&quot;Sort By&quot;,
+                  choiceLabels:{&quot;company&quot;},
+                  choiceValues:{&quot;company&quot;},
+                  value:&quot;company&quot;
+                )
+              },
+              secondColumnContents:{
+                #&quot;SYSTEM_SYSRULES_radioButtonFieldByIndex&quot;(
+                  label:&quot;Order&quot;,
+                  instructions:&quot;&quot;,
+                  choiceLabels:{&quot;Ascending&quot;,&quot;Descending&quot;},
+                  value:1
+                )
+              }
+            ),
+            {}
+          )  
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;&quot;,
+        firstColumnContents:{
+          #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+            primaryButtons: {
+              #&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(
+                label: &quot;Test&quot;,
+                style: &quot;NORMAL&quot;,
+                value:fn!true(),
+                saveInto:local!test
+              )
+            },
+            secondaryButtons: {
+              
+            }
+          )
+        }
+      ),
+      /*a!sectionLayout(
+        label:&quot;Query Statement&quot;,
+        isCollapsible:fn!true(),
+        firstColumnContents:{
+          a!paragraphField(
+            label:&quot;&quot;,
+            labelPosition:&quot;COLLAPSED&quot;,
+            instructions:&quot;&quot;,
+            readOnly:fn!true(),
+            value:if(local!newFilter,&quot;SELECT * FROM purchaseRequest WHERE id = 1 AND quantity &gt;= 10&quot;,&quot;SELECT * FROM purchaseRequest WHERE id = 1&quot;)
+          )
+        }
+      ),*/
+      if(local!test,
+        #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+          label:&quot;Test Results&quot;,
+          firstColumnContents:{
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label:&quot;Query Statement&quot;,
+              labelPosition:&quot;&quot;,
+              instructions:&quot;&quot;,
+              readOnly:fn!true(),
+              value:if(local!newFilter,&quot;SELECT * FROM purchaseRequest WHERE id = 1 AND quantity &gt;= 10&quot;,&quot;SELECT * FROM purchaseRequest WHERE id = 1&quot;)
+            ),
+            #&quot;SYSTEM_SYSRULES_gridField&quot;(
+              label:&quot;purchaseRequest&quot;,
+              columns:{
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                  label:&quot;id&quot;,
+                  field:&quot;&quot;,
+                  data:{&quot;1&quot;}
+                ),
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                  label:&quot;quantity&quot;,
+                  field:&quot;&quot;,
+                  data:{&quot;18&quot;}
+                ),
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                  label:&quot;itemName&quot;,
+                  field:&quot;&quot;,
+                  data:{&quot;scooters&quot;}
+                ),
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                  label:&quot;company&quot;,
+                  field:&quot;&quot;,
+                  data:{&quot;Veridian Dynamics&quot;}
+                )
+              },
+              totalCount:1,
+              value:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(batchSize:-1,startIndex:1)
+            )
+          }
+        ),
+        {}
+      )
+    },
+    secondColumnContents: {
+      /* Add components here for a two-column form */
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

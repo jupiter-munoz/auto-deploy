@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+  targetNamespace="http://cilin03.appiancorp.com:8080/suite/types/"
+  xmlns:tns="http://cilin03.appiancorp.com:8080/suite/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Review">
+    <xsd:sequence>
+      <xsd:element name="Reviewer" nillable="true" type="xsd:string"/>
+      <xsd:element name="reviewedOn" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="Comments" nillable="true" type="xsd:string"/>
+      <xsd:element name="madeChanges" nillable="true" type="xsd:boolean"/>
+      <xsd:element name="status" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

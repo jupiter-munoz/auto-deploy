@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportImageField</name>
+        <uuid>_a-0001d70d-8778-8000-8778-6b00006b0000_943</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>'type!{http://www.appian.com/ae/types/2009}FormLayout'(
+  content: 'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+      'type!{http://www.appian.com/ae/types/2009}SectionLayout' (content: 
+        'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+          columns: {
+            'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+              contents: {
+                'type!{http://www.appian.com/ae/types/2009}ImageField'(
+                  label: &quot;Large Image&quot;, 
+                  instructions: &quot;Large images are auto-scaled to fit the column width&quot;, 
+                  source: &quot;https://www.dropbox.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg?dl=1&quot;,
+                  altText: &quot;DISA Team&quot;
+                )
+              }
+            ),
+            'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+              contents: {
+                'type!{http://www.appian.com/ae/types/2009}ImageField'(
+                  label: &quot;Small Image&quot;, 
+                  instructions: &quot;Small images are shown at their natural size; they are not scaled up&quot;,
+                  source: &quot;https://www.dropbox.com/s/dzah2dmk852plbc/small.jpg?dl=1&quot;,
+                  altText: &quot;Conference&quot;
+                )
+              }
+            )
+          }
+        )
+      ),
+      'type!{http://www.appian.com/ae/types/2009}SectionLayout' (content: 
+        'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+          columns: {
+            'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+              contents: {
+                'type!{http://www.appian.com/ae/types/2009}ImageField'(
+                  label: &quot;Large Image&quot;, 
+                  instructions: &quot;Large images are auto-scaled to fit the column width&quot;,
+                  source: &quot;https://www.dropbox.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg?dl=1&quot;,
+                  altText: &quot;DISA Team&quot;
+                )
+              }
+            )
+          }
+        )
+      ),
+      'type!{http://www.appian.com/ae/types/2009}ImageField'(
+        label: &quot;Missing Image&quot;, 
+        instructions: &quot;Invalid image URL (browser default handling)&quot;, 
+        source: &quot;http://127.0.0.1/fake.png&quot;,
+        altText: &quot;Example of missing image&quot;
+      )
+    })
+  })
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

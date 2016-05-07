@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportChartDrillable</name>
+        <uuid>_a-0000d7fd-38c3-8000-2bf7-010000010000_1389</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+ local!existingrecords: #&quot;_a-0000d7c6-7676-8000-6fcc-010000010000_1310&quot;(#&quot;_a-0000d7c6-7676-8000-6fcc-010000010000_1309&quot;, &quot;name&quot;),
+ local!number: mod(tointeger(local!existingrecords.identifiers),100),
+ local!names: if(isnull(local!existingrecords.data), {&quot;&quot;}, local!existingrecords.data.name),
+ local!variable: 'type!{http://www.appian.com/ae/types/2009}PagingInfo'(1,10,'type!{http://www.appian.com/ae/types/2009}SortInfo'(&quot;index2&quot;,false)),
+  'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+     columns: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+      contents: {
+	
+	'type!{http://www.appian.com/ae/types/2009}BarChart'(
+          label: &quot;Current Records&quot;,
+	  instructions: &quot;Clicking on any bar should open the linked record (using the 'RecordLink' type)&quot;,
+          categories: {&quot;Companies&quot;},
+          series: {
+	    apply(
+	      'type!{http://www.appian.com/ae/types/2009}BarChartSeries'(
+	        label: _, 
+		data: _,
+		links: _),
+	      merge(
+	        local!names, 
+		local!number,
+                  apply(
+		    'type!{http://www.appian.com/ae/types/2009}RecordLink'(recordRef: _),
+		    #&quot;SYSTEM_SYSRULES_toRecordIdentifier&quot;(
+		      #&quot;_a-0000d7c6-7676-8000-6fcc-010000010000_1309&quot;,
+		      local!existingrecords.identifiers
+		    )
+		  )
+              )
+	    )
+          },
+          yAxisTitle: &quot;Number of employees&quot;,
+          showDataLabels: true,
+          showLegend: null
+        )
+       }
+     )
+   }
+ )
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

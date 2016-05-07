@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>uiExpressionSelection</name>
+        <uuid>_a-0000d711-d7b0-8000-d332-010000010000_1160</uuid>
+        <description>This is the selector which chooses which ui to display. The ui examples are taken from https://github.com/appian/ae/tree/master/test/src/data/com/appiancorp/sail/UiServiceSmokeTest</description>
+        <parentUuid>_a-0000d710-87e4-8000-837a-010000010000_1404</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=choose(
+  selection,
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1161&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1162&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1214&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1215&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1216&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1217&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1218&quot;(),
+  #&quot;_a-0000d7a5-8c7d-8000-88a3-010000010000_1457&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1219&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1220&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1221&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1222&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1223&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1224&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1225&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1226&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1227&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1228&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1229&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1230&quot;(),
+  #&quot;_a-0000d711-d7b0-8000-d332-010000010000_1231&quot;()
+)</definition>
+        <namedTypedValue>
+            <name>selection</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

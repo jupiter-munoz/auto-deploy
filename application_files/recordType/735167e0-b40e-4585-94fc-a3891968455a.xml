@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <recordType name="TestUIExpressions" a:uuid="735167e0-b40e-4585-94fc-a3891968455a">
+        <a:pluralName>UI Expressions</a:pluralName>
+        <a:description>Test all the different UI Expressions</a:description>
+        <a:urlStub>TestUIExpressions</a:urlStub>
+        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="0004d718-0701-8000-192e-010000010000"/>
+        <a:listViewTemplateExpr>#&quot;SYSTEM_SYSRULES_listViewItem&quot;(&#xD;
+  image:#&quot;_a-0000d717-1df1-8000-192d-010000010000_1752&quot;,&#xD;
+  timestamp:=now(),&#xD;
+  title:rf!name,&#xD;
+  details:rf!details&#xD;
+)</a:listViewTemplateExpr>
+        <a:detailViewCfg>
+            <a:nameExpr>=&quot;Summary&quot;</a:nameExpr>
+            <a:uiExpr>#&quot;_a-0000d710-87e4-8000-837a-010000010000_1405&quot;()</a:uiExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:urlStub>summary</a:urlStub>
+        </a:detailViewCfg>
+        <a:defaultSortInfo>
+            <field>name</field>
+            <ascending>true</ascending>
+        </a:defaultSortInfo>
+        <a:isSystem>false</a:isSystem>
+        <a:layoutType>FEED</a:layoutType>
+        <a:security>16383</a:security>
+    </recordType>
+    <roleMap/>
+</recordTypeHaul>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Milestone Component" a:uuid="dd5b9f61-519b-4382-9b36-2f0b31b92189">
+        <a:description>Runtime equivalent to the mockups repository's component_milestone.html</a:description>
+        <a:uiExpr>=#&quot;_a-0001d7bc-e497-8000-e497-010000010000_2071&quot;()</a:uiExpr>
+        <a:urlStub>milestoneField</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

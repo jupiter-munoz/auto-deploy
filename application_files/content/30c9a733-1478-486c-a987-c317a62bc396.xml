@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_rulePerformanceAndUsageAnalytics</name>
+        <uuid>30c9a733-1478-486c-a987-c317a62bc396</uuid>
+        <description></description>
+        <parentUuid>_a-0000d982-fa33-8000-f241-010000010000_2220</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(&#xD;
+  local!aggregation: &quot;Daily&quot;,&#xD;
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(&#xD;
+    /*label: &quot;Rule Performance Over Time: rule!CRM_customerSummaryDashboard&quot;,*/&#xD;
+    instructions:&quot;Select an interval to group by and a date range for the performance evaluation&quot;,&#xD;
+    firstColumnContents: {&#xD;
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+        label: &quot;&quot;,&#xD;
+        firstColumnContents: {&#xD;
+          #&quot;SYSTEM_SYSRULES_radioButtonField&quot;(&#xD;
+            label: &quot;Group By&quot;,&#xD;
+            choiceLabels: {&#xD;
+              &quot;None&quot;, &quot;Hourly&quot;, &quot;Daily&quot;, &quot;Weekly&quot;&#xD;
+            },&#xD;
+            choiceValues: {&#xD;
+              &quot;None&quot;, &quot;Hourly&quot;, &quot;Daily&quot;, &quot;Weekly&quot;&#xD;
+            },&#xD;
+            value: local!aggregation,&#xD;
+            saveInto: local!aggregation&#xD;
+          ),&#xD;
+        },&#xD;
+        secondColumnContents:&#xD;
+        {&#xD;
+        if(&#xD;
+        and(local!aggregation&lt;&gt;&quot;None&quot;,local!aggregation&lt;&gt;&quot;Hourly&quot;),&#xD;
+        {&#xD;
+          #&quot;SYSTEM_SYSRULES_dateField&quot;(&#xD;
+            label: &quot;From&quot;,&#xD;
+            value: date(2014,5,1)&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_dateField&quot;(&#xD;
+            label: &quot;To&quot;,&#xD;
+            value: date(2014,5,7)&#xD;
+          )&#xD;
+        },&#xD;
+        {&#xD;
+          #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(&#xD;
+            label: &quot;From&quot;,&#xD;
+            value: date(2014,5,1)&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_dateTimeField&quot;(&#xD;
+            label: &quot;To&quot;,&#xD;
+            value: date(2014,5,7)&#xD;
+          )&#xD;
+        }&#xD;
+        )&#xD;
+      }&#xD;
+      ),&#xD;
+      if(&#xD;
+        local!aggregation&lt;&gt;&quot;None&quot;,&#xD;
+        #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+          label:&quot;Rule Performance Trends&quot;,&#xD;
+          firstColumnContents: {&#xD;
+            #&quot;SYSTEM_SYSRULES_gridField&quot;(&#xD;
+              label: &quot;Execution Time (&quot;&amp;local!aggregation&amp;&quot;)&quot;,&#xD;
+              columns: {&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;Date&quot;,&#xD;
+                  field: &quot;date&quot;,&#xD;
+                  data: {&#xD;
+                    date(2014,5,1),&#xD;
+                    date(2014,5,2),&#xD;
+                    date(2014,5,3),&#xD;
+                    date(2014,5,4),&#xD;
+                    date(2014,5,5),&#xD;
+                    date(2014,5,6),&#xD;
+                    date(2014,5,7)&#xD;
+                  }, &#xD;
+                  links: {&#xD;
+                    repeat(7, #&quot;SYSTEM_SYSRULES_safeLink&quot;(uri: &quot;www.google.com&quot;))&#xD;
+                  }&#xD;
+                ),&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;# of Times Called&quot;,&#xD;
+                  alignment: &quot;RIGHT&quot;,&#xD;
+                  data: {35,28,42,45,29,33,50}&#xD;
+                ),&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;Min (ms)&quot;,&#xD;
+                  alignment: &quot;RIGHT&quot;,&#xD;
+                  data: {23, 22, 25, 22, 31, 65, 60}&#xD;
+                ),&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;Average (ms)&quot;,&#xD;
+                  alignment: &quot;RIGHT&quot;,&#xD;
+                  data: {32, 25, 28, 35, 34, 66, 64}&#xD;
+                ),&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;Max (ms)&quot;,&#xD;
+                  alignment: &quot;RIGHT&quot;,&#xD;
+                  data: {55, 69, 61, 67, 58, 70, 65}&#xD;
+                ),&#xD;
+              },&#xD;
+              totalCount: 7,&#xD;
+              value: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(&#xD;
+                startIndex: 1,&#xD;
+                batchSize: 7,&#xD;
+                sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(&#xD;
+                  field: &quot;date&quot;&#xD;
+                )&#xD;
+              )&#xD;
+            )&#xD;
+          },&#xD;
+          secondColumnContents:{&#xD;
+            #&quot;SYSTEM_SYSRULES_lineChartField&quot;(&#xD;
+              label:&quot;Execution Time in Milliseconds (&quot;&amp;local!aggregation&amp;&quot;)&quot;,&#xD;
+              series:{&#xD;
+                #&quot;SYSTEM_SYSRULES_chartSeries&quot;(data: {23, 22, 25, 22, 31, 65, 60}, label: &quot;Min&quot;),&#xD;
+                #&quot;SYSTEM_SYSRULES_chartSeries&quot;(data: {32, 25, 28, 35, 34, 66, 64}, label: &quot;Average&quot;),&#xD;
+                #&quot;SYSTEM_SYSRULES_chartSeries&quot;(data: {55, 69, 61, 67, 58, 70, 65}, label: &quot;Max&quot;)&#xD;
+              },&#xD;
+              categories:{&#xD;
+                date(2014,5,1),&#xD;
+                date(2014,5,2),&#xD;
+                date(2014,5,3),&#xD;
+                date(2014,5,4),&#xD;
+                date(2014,5,5),&#xD;
+                date(2014,5,6),&#xD;
+                date(2014,5,7)&#xD;
+              },&#xD;
+              yAxisMin: 0,&#xD;
+              yAxisTitle: &quot;ms&quot;,&#xD;
+              xAxisTitle: &quot;Date&quot;&#xD;
+            ),&#xD;
+            #&quot;SYSTEM_SYSRULES_lineChartField&quot;(&#xD;
+              label:&quot;Number of Times Called (&quot;&amp;local!aggregation&amp;&quot;)&quot;,&#xD;
+              series:{&#xD;
+                #&quot;SYSTEM_SYSRULES_chartSeries&quot;(data: {35,28,42,45,29,33,50}, label: &quot;Count&quot;)&#xD;
+              },&#xD;
+              categories:{&#xD;
+                date(2014,5,1),&#xD;
+                date(2014,5,2),&#xD;
+                date(2014,5,3),&#xD;
+                date(2014,5,4),&#xD;
+                date(2014,5,5),&#xD;
+                date(2014,5,6),&#xD;
+                date(2014,5,7)&#xD;
+              },&#xD;
+              showLegend: false,&#xD;
+              yAxisMin: 0,&#xD;
+              yAxisTitle: &quot;Count&quot;,&#xD;
+              xAxisTitle: &quot;Date&quot;&#xD;
+            )&#xD;
+          }&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+          label:&quot;Performance Metrics&quot;,&#xD;
+          firstColumnContents: {&#xD;
+            #&quot;SYSTEM_SYSRULES_gridField&quot;(&#xD;
+              label: &quot;&quot;,&#xD;
+              columns: {&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;Timestamp&quot;,&#xD;
+                  data: {&#xD;
+                    datetime(2014,5,1),&#xD;
+                    datetime(2014,5,2),&#xD;
+                    datetime(2014,5,3),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,5),&#xD;
+                    datetime(2014,5,6),&#xD;
+                    datetime(2014,5,7),&#xD;
+                    datetime(2014,5,1),&#xD;
+                    datetime(2014,5,2),&#xD;
+                    datetime(2014,5,3),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,5),&#xD;
+                    datetime(2014,5,6),&#xD;
+                    datetime(2014,5,7),&#xD;
+                    datetime(2014,5,3),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,5),&#xD;
+                    datetime(2014,5,6),&#xD;
+                    datetime(2014,5,7),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,1),&#xD;
+                    datetime(2014,5,2),&#xD;
+                    datetime(2014,5,3),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,5),&#xD;
+                    datetime(2014,5,6),&#xD;
+                    datetime(2014,5,7),&#xD;
+                    datetime(2014,5,1),&#xD;
+                    datetime(2014,5,2),&#xD;
+                    datetime(2014,5,3),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,5),&#xD;
+                    datetime(2014,5,6),&#xD;
+                    datetime(2014,5,7),&#xD;
+                    datetime(2014,5,3),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,5),&#xD;
+                    datetime(2014,5,6),&#xD;
+                    datetime(2014,5,7),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,1),&#xD;
+                    datetime(2014,5,2),&#xD;
+                    datetime(2014,5,3),&#xD;
+                    datetime(2014,5,4),&#xD;
+                    datetime(2014,5,5),&#xD;
+                    datetime(2014,5,6),&#xD;
+                    datetime(2014,5,7),&#xD;
+                    datetime(2014,5,1),&#xD;
+                    datetime(2014,5,2),&#xD;
+                    datetime(2014,5,3)&#xD;
+                  }&#xD;
+                ),&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;Evaluation Time (ms)&quot;,&#xD;
+                  alignment: &quot;RIGHT&quot;,&#xD;
+                  data:  {23, 22, 25, 22, 17, 65, 60, 23, 25, 22, 31, 65, 60, 19, 65, 60, 23,  60, 23, 25, 23, 22, 25, 22, 17, 65, 60, 23, 25, 22, 31, 65, 60, 19, 65, 60, 23,  60, 23, 25, 23, 22, 25, 22, 17, 65, 60, 23, 25, 22}&#xD;
+                ),&#xD;
+                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+                  label: &quot;User&quot;,&#xD;
+                  data:{&#xD;
+                    &quot;abhi.agarwal&quot;,&#xD;
+                    &quot;carlos.aguayo&quot;,&#xD;
+                    &quot;nanda.ajeet&quot;,&#xD;
+                    &quot;david.alberto&quot;,&#xD;
+                    &quot;jimmy.alderman&quot;,&#xD;
+                    &quot;joseph.ambrogne&quot;,&#xD;
+                    &quot;amilcar.andrade&quot;,&#xD;
+                    &quot;antonio.andrade&quot;,&#xD;
+                    &quot;jeremy.ankur&quot;,&#xD;
+                    &quot;andrew.bai&quot;,&#xD;
+                    &quot;max.baine&quot;,&#xD;
+                    &quot;kevin.barrett&quot;,&#xD;
+                    &quot;abhi.agarwal&quot;,&#xD;
+                    &quot;carlos.aguayo&quot;,&#xD;
+                    &quot;nanda.ajeet&quot;,&#xD;
+                    &quot;david.alberto&quot;,&#xD;
+                    &quot;jimmy.alderman&quot;,&#xD;
+                    &quot;joseph.ambrogne&quot;,&#xD;
+                    &quot;amilcar.andrade&quot;,&#xD;
+                    &quot;antonio.andrade&quot;,&#xD;
+                    &quot;jeremy.ankur&quot;,&#xD;
+                    &quot;andrew.bai&quot;,&#xD;
+                    &quot;max.baine&quot;,&#xD;
+                    &quot;kevin.barrett&quot;,&#xD;
+                    &quot;abhi.agarwal&quot;,&#xD;
+                    &quot;carlos.aguayo&quot;,&#xD;
+                    &quot;nanda.ajeet&quot;,&#xD;
+                    &quot;david.alberto&quot;,&#xD;
+                    &quot;jimmy.alderman&quot;,&#xD;
+                    &quot;joseph.ambrogne&quot;,&#xD;
+                    &quot;amilcar.andrade&quot;,&#xD;
+                    &quot;antonio.andrade&quot;,&#xD;
+                    &quot;jeremy.ankur&quot;,&#xD;
+                    &quot;andrew.bai&quot;,&#xD;
+                    &quot;max.baine&quot;,&#xD;
+                    &quot;kevin.barrett&quot;,&#xD;
+                    &quot;abhi.agarwal&quot;,&#xD;
+                    &quot;carlos.aguayo&quot;,&#xD;
+                    &quot;nanda.ajeet&quot;,&#xD;
+                    &quot;david.alberto&quot;,&#xD;
+                    &quot;jimmy.alderman&quot;,&#xD;
+                    &quot;joseph.ambrogne&quot;,&#xD;
+                    &quot;amilcar.andrade&quot;,&#xD;
+                    &quot;antonio.andrade&quot;,&#xD;
+                    &quot;jeremy.ankur&quot;,&#xD;
+                    &quot;andrew.bai&quot;,&#xD;
+                    &quot;max.baine&quot;,&#xD;
+                    &quot;kevin.barrett&quot;,&#xD;
+                    &quot;abhi.agarwal&quot;,&#xD;
+                    &quot;carlos.aguayo&quot;&#xD;
+                  }&#xD;
+                )&#xD;
+              },&#xD;
+              totalCount: 700,&#xD;
+              value: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(&#xD;
+                startIndex: 1,&#xD;
+                batchSize: 50&#xD;
+              )&#xD;
+            )&#xD;
+          }&#xD;
+        )&#xD;
+      )&#xD;
+    }&#xD;
+  )&#xD;
+)&#xD;
+&#xD;
+</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

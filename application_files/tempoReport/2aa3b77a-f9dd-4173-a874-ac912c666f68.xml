@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Datetime Field" a:uuid="2aa3b77a-f9dd-4173-a874-ac912c666f68">
+        <a:uiExpr>=#&quot;_a-0000d85e-220a-8000-15a7-010000010000_1746&quot;()</a:uiExpr>
+        <a:urlStub>vYp0Ow</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

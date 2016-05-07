@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Paragraph Component" a:uuid="460c49f4-2c75-42a1-8cd5-af709b352e7e">
+        <a:description>Various uses of the ParagraphField to match the mockups</a:description>
+        <a:uiExpr>=#&quot;_a-0001d734-c46f-8000-c46f-6b00006b0000_1066&quot;()</a:uiExpr>
+        <a:urlStub>paragraphField</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000d615-4c23-8000-da6f-010000010000_7</groupUuid>
+            </groups>
+        </role>
+        <role name="report_viewer">
+            <users/>
+            <groups>
+                <groupUuid>0001d0b7-c973-8000-c973-4e2a554e2a55</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

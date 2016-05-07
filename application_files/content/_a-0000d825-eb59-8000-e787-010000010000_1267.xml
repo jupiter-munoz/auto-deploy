@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>renderFileUpload</name>
+        <uuid>_a-0000d825-eb59-8000-e787-010000010000_1267</uuid>
+        <description></description>
+        <parentUuid>_a-0000d825-eb59-8000-e787-010000010000_1262</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>with(
+  local!setAndIncreaseIfNeeded: lambda_appian_internal(
+    fieldValue,
+    if(   /* Do we need to add? */
+      and(
+        not(isnull(fieldValue)),                 /* If the field isn't null (something has been added here) */
+        index = count(ri!files)                 /* and we're at the end of the list */
+      ),
+      updatearray(append(ri!files, null), index, fieldValue),  /* Update the list with the new value and add a null to the end */
+      if( /* Do we need to remove? */
+        and(
+          isnull(fieldValue),                        /* Field is now null (value was removed) */
+          count(ri!files) &gt; 1                       /* We aren't down to just one field yet */
+        ),
+        remove(ri!files, ri!index),                 /* Remove the list item for this field */
+        updatearray(ri!files, ri!index, fieldValue) /* Neither add nor remove, just update the list with the new value */
+      )
+    )
+  ),
+  #&quot;SYSTEM_SYSRULES_fileUploadField&quot;(
+    label: if(ri!index = 1, &quot;Attachment&quot;, &quot;&quot;),
+    target: #&quot;_a-0000d825-eb59-8000-e787-010000010000_1266&quot;,
+    value: ri!files[ri!index],
+    saveInto: {
+      ri!files &lt;&lt; local!setAndIncreaseIfNeeded(_)
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>files</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>index</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

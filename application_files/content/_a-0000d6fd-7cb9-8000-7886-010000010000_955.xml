@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportKudosFollowers</name>
+        <uuid>_a-0000d6fd-7cb9-8000-7886-010000010000_955</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>='type!{http://www.appian.com/ae/types/2009}StackedBarChart'(
+  categories: { &quot;Kelly Dubrey&quot;,&quot;Allan Knarr&quot;,&quot;Jessie Bevill&quot;,&quot;Tania Youngren&quot;,&quot;Neil Kamps&quot;,&quot;Fernando Polster&quot;,&quot;Erik Chaparro&quot;,&quot;Kelly Fargo&quot;,&quot;Christian McHaney&quot;,&quot;Carlene Solari&quot;,&quot;Matthew Heitman&quot;,&quot;Loraine Veitch&quot;},
+  series: {
+    'type!{http://www.appian.com/ae/types/2009}StackedBarChartSeries'(label: &quot;Kudos&quot;, data: { 34,30,30,27,24,19,18,16,12,10,10,0 }),
+    'type!{http://www.appian.com/ae/types/2009}StackedBarChartSeries'(label: &quot;Followers&quot;, data: { 119,67,81,32,210,83,102,49,68,94,80,32 })
+  },
+  showDataLabels: true,
+  showLegend: true
+)
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

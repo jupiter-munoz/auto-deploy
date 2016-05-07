@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="OneApp" xmlns:tns="OneApp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="TechEmployee">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">
+				@Table(
+					uniqueConstraints={@UniqueConstraint(columnNames={"username"})}
+				)
+			</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">
+            @Column(nullable=false)
+            @Id
+            @GeneratedValue
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="username" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

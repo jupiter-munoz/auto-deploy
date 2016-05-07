@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>clientCertificateStandaloneGrid</name>
+        <uuid>bd0bb2a5-e56f-44a5-9e0a-8b03df1cee4e</uuid>
+        <description></description>
+        <parentUuid>_a-0000d971-e283-8000-db05-010000010000_2196</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(&#xD;
+ local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1, batchSize: 5),&#xD;
+ local!addNew:false,&#xD;
+ if(local!addnew,&#xD;
+ #&quot;SYSTEM_SYSRULES_formLayout&quot;(&#xD;
+   label: &quot;Add New Certificate&quot;,&#xD;
+   firstColumnContents:{&#xD;
+    #&quot;SYSTEM_SYSRULES_fileUploadField&quot;(&#xD;
+      label: &quot;Certificate&quot;&#xD;
+    )&#xD;
+    },&#xD;
+    secondColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Certificate Password&quot;&#xD;
+        )&#xD;
+      },&#xD;
+    buttons:#&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
+     primaryButtons:#&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(label:&quot;Save Changes&quot;,style:&quot;PRIMARY&quot;,value:false,saveInto:local!addNew),&#xD;
+     secondaryButtons:#&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(label:&quot;Cancel&quot;,style:&quot;NORMAL&quot;,value:false,saveInto:local!addNew)&#xD;
+     )&#xD;
+  ),&#xD;
+ #&quot;SYSTEM_SYSRULES_formLayout&quot;(&#xD;
+   label: &quot;Client Certificates&quot;,&#xD;
+   firstColumnContents: {&#xD;
+     #&quot;SYSTEM_SYSRULES_gridField&quot;(&#xD;
+       label: &quot;&quot;,&#xD;
+       value: local!pagingInfo,&#xD;
+       columns:{&#xD;
+         #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+           label: &quot;Common Name&quot;,&#xD;
+           data: {&#xD;
+             fn!repeat(local!pagingInfo.batchSize, &quot;*.appianci.net&quot;)&#xD;
+           }&#xD;
+         ),&#xD;
+         #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+           label: &quot;Serial Number&quot;,&#xD;
+           data: {&#xD;
+             fn!repeat(local!pagingInfo.batchSize, &quot;04 42 c9 28 02 60 4c&quot;)&#xD;
+           }&#xD;
+         ),&#xD;
+         #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+           label: &quot;Valid From&quot;,&#xD;
+           data: {&#xD;
+             fn!repeat(local!pagingInfo.batchSize, date(2014,4,8))&#xD;
+           }&#xD;
+         ),&#xD;
+         #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+           label: &quot;Valid To&quot;,&#xD;
+           data: {&#xD;
+             fn!repeat(local!pagingInfo.batchSize, date(2017,1,11))&#xD;
+           }&#xD;
+         ),&#xD;
+         #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(&#xD;
+           label: &quot;Thumbprint&quot;,&#xD;
+           data: {&#xD;
+             fn!repeat(local!pagingInfo.batchSize, &quot;1c bc e7 93 4f e8 bf 4c 56 29 cf 86 0c 86 28 2b 75 7c dd 37&quot;)&#xD;
+           }&#xD;
+         ),&#xD;
+         #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(&#xD;
+           label: &quot;&quot;,&#xD;
+           size: &quot;ICON&quot;,&#xD;
+           data: {&#xD;
+             fn!repeat(&#xD;
+               local!pagingInfo.batchSize,&#xD;
+               #&quot;SYSTEM_SYSRULES_documentImage&quot;( document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;REMOVE&quot;))&#xD;
+             )&#xD;
+           }&#xD;
+         )&#xD;
+       },&#xD;
+       totalCount: local!pagingInfo.batchSize&#xD;
+     ),&#xD;
+     #&quot;SYSTEM_SYSRULES_linkField&quot;(labelPostion:&quot;COLLAPSED&quot;,links:{#&quot;SYSTEM_SYSRULES_dynamicLink&quot;(label:&quot;+New Certificate&quot;,value:true,saveInto:local!addNew)})&#xD;
+   }&#xD;
+  )&#xD;
+ )&#xD;
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

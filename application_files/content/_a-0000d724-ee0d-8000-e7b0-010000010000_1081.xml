@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportCheckboxField</name>
+        <uuid>_a-0000d724-ee0d-8000-e7b0-010000010000_1081</uuid>
+        <description>Runtime equivalent to the mockups repository's component_checkbox.html</description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>
+'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(
+  columns: {
+    'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+      contents: {
+        #&quot;SYSTEM_SYSRULES_checkboxFieldByIndex&quot;(
+          label: &quot;Standard Checkbox Group&quot;,
+          instructions: &quot;Checkbox group instructions&quot;,
+          choiceLabels: {
+            &quot;Tax-Exempt&quot;,
+            &quot;Billable&quot;,
+            &quot;Have Receipt&quot;
+          }
+        ),
+        #&quot;SYSTEM_SYSRULES_checkboxFieldByIndex&quot;(
+          label: &quot;Standard Checkbox Group&quot;,
+          instructions: &quot;align: center&quot;,
+          align: &quot;CENTER&quot;,
+          choiceLabels: {
+            &quot;Tax-Exempt&quot;,
+            &quot;Billable&quot;,
+            &quot;Have Receipt&quot;
+          }
+        ),
+        #&quot;SYSTEM_SYSRULES_checkboxFieldByIndex&quot;(
+          label: &quot;Standard Checkbox Group&quot;,
+          instructions: &quot;align: right&quot;,
+          align: &quot;RIGHT&quot;,
+          choiceLabels: {
+            &quot;Tax-Exempt&quot;,
+            &quot;Billable&quot;,
+            &quot;Have Receipt&quot;
+          }
+        ),
+        #&quot;SYSTEM_SYSRULES_checkboxFieldByIndex&quot;(
+          label: &quot;Standard Checkbox Group&quot;,
+          instructions: &quot;align: left&quot;,
+          align: &quot;LEFT&quot;,
+          choiceLabels: {
+            &quot;Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt &quot;,
+            &quot;Billable Billable&quot;,
+            &quot;Have Receipt Have Receipt Have Receipt&quot;
+          }
+        ),
+        #&quot;SYSTEM_SYSRULES_checkboxFieldByIndex&quot;(
+          label: &quot;Standard Checkbox Group&quot;,
+          instructions: &quot;align: center&quot;,
+          align: &quot;CENTER&quot;,
+          choiceLabels: {
+            &quot;Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt &quot;,
+            &quot;Billable Billable&quot;,
+            &quot;Have Receipt Have Receipt Have Receipt&quot;
+          }
+        ),
+        #&quot;SYSTEM_SYSRULES_checkboxFieldByIndex&quot;(
+          label: &quot;Standard Checkbox Group&quot;,
+          instructions: &quot;align: right&quot;,
+          align: &quot;RIGHT&quot;,
+          choiceLabels: {
+            &quot;Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt Tax-Exempt &quot;,
+            &quot;Billable Billable&quot;,
+            &quot;Have Receipt Have Receipt Have Receipt&quot;
+          }
+        ),
+        'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+          choices: {
+            &quot;Single checkbox with no field label&quot;
+          }
+        ),
+        'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+          label: &quot;Disabled&quot;,
+          disabled: true,
+          value: { 2 },
+          choices: {
+            &quot;Disabled Unchecked&quot;,
+            &quot;Disabled Checked&quot;
+          }
+        ),
+        'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+          label: &quot;Faux Group&quot;,
+          value: 1,
+          choices: {
+            &quot;First&quot;
+          }
+        ),
+        'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+          disabled: true,
+          choices: {
+            &quot;Second&quot;
+          }
+        ),
+        'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+          instructions: &quot;These are actually 3 separate fields (to allow one of the checkboxes to be disabled; normally, the whole group must be disabled)&quot;,
+          choices: {
+            &quot;Third&quot;
+          }
+        )
+      }
+    ),
+  'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(
+    contents: {
+      'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+        label: &quot;Long Checkbox Labels&quot;,
+        value: { 1, 2 },
+        choices: {
+         &quot;Hello World&quot;,
+         &quot;Bacon ipsum dolor sit amet short ribs shankle pork belly turkey&quot;,
+         &quot;Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;
+        }
+      ),
+    'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+      label: &quot;No Checkbox Label&quot;,
+      value: 1,
+      choices: { &quot;&quot; }
+    ),
+    'type!{http://www.appian.com/ae/types/2009}CheckboxField'(
+      label: &quot;No Checkboxes&quot;,
+      instructions: &quot;Instructions for checkbox group with zero checkboxes at run-time&quot;,
+      choices: { }
+    )
+  })
+})
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

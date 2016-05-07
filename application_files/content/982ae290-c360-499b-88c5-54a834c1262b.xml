@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_createSiteModal</name>
+        <uuid>982ae290-c360-499b-88c5-54a834c1262b</uuid>
+        <description></description>
+        <parentUuid>_a-0000da4e-7553-8000-f5a4-010000010000_2483</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=&#xD;
+load(&#xD;
+  local!formID:1,&#xD;
+  local!initializeModal:fn!lambda_appian_internal(&#xD;
+    ri!buttonValue,&#xD;
+    ri!buttonSaveInto,&#xD;
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+      firstColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
+          secondaryButtons:#&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(&#xD;
+            label:&quot;Initialize Modal&quot;,&#xD;
+            value:ri!buttonValue,&#xD;
+            saveInto:ri!buttonSaveInto&#xD;
+          )&#xD;
+        )&#xD;
+      }&#xD;
+    )&#xD;
+  ),&#xD;
+  local!createSiteModal: fn!lambda_appian_internal(&#xD;
+    ri!name,&#xD;
+    ri!desc,&#xD;
+    ri!url,&#xD;
+    ri!sail,&#xD;
+    #&quot;SYSTEM_SYSRULES_tag&quot;(&#xD;
+      tags: {renderingMode: &quot;MODAL&quot;},&#xD;
+      target:&#xD;
+      #&quot;SYSTEM_SYSRULES_formLayout&quot;(&#xD;
+        label: &quot;Create Site&quot;,&#xD;
+        instructions: &quot;&quot;,&#xD;
+        firstColumnContents: {&#xD;
+          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+            label: &quot;Name&quot;,&#xD;
+            labelPosition: &quot;ABOVE&quot;,&#xD;
+            saveInto: {},&#xD;
+            refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+            required: true,&#xD;
+            validations: {},&#xD;
+            align: &quot;LEFT&quot;&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+            label: &quot;Description&quot;,&#xD;
+            labelPosition: &quot;ABOVE&quot;,&#xD;
+            saveInto: {},&#xD;
+            refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+            validations: {}&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+            label: &quot;URL Stub&quot;,&#xD;
+            labelPosition: &quot;ABOVE&quot;,&#xD;
+            instructions: &quot;Used to form a unique URL for the site. If left blank, a random alphanumeric string will be generated.&quot;,&#xD;
+            saveInto: {},&#xD;
+            refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+            validations: {},&#xD;
+            align: &quot;LEFT&quot;&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+            label: &quot;Interface&quot;,&#xD;
+            labelPosition: &quot;ABOVE&quot;,&#xD;
+            instructions: &quot;Enter an expression to define the interface&quot;,&#xD;
+            saveInto: {},&#xD;
+            refreshAfter: &quot;UNFOCUS&quot;,&#xD;
+            validations: {}&#xD;
+          )&#xD;
+        },&#xD;
+        secondColumnContents: {&#xD;
+          /* Add components here for a two-column form */&#xD;
+        },&#xD;
+        buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
+          primaryButtons: {&#xD;
+            #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
+              label: &quot;Create Site&quot;,&#xD;
+              style: &quot;PRIMARY&quot;,&#xD;
+              saveInto: {}&#xD;
+            )&#xD;
+          },&#xD;
+          secondaryButtons: {&#xD;
+            #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
+              label: &quot;Cancel&quot;,&#xD;
+              style: &quot;NORMAL&quot;,&#xD;
+              value: true,&#xD;
+              skipValidation: true&#xD;
+            )&#xD;
+          }&#xD;
+        ),&#xD;
+        validations: {}&#xD;
+      )&#xD;
+    )&#xD;
+  ),&#xD;
+  choose(local!formID,&#xD;
+    local!initializeModal(2,local!formID),&#xD;
+    local!createSiteModal(&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;)  &#xD;
+  )&#xD;
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

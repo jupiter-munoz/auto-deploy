@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Active Users" a:uuid="3f4bd101-4208-4070-a568-274532885b56">
+        <a:description></a:description>
+        <a:uiExpr>#&quot;0bbd7411-d1c8-4fce-869c-7b91824739ff&quot;()</a:uiExpr>
+        <a:urlStub>eWExoA</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportButton</name>
+        <uuid>_a-0000d7c5-bedd-8000-9728-010000010000_1223</uuid>
+        <description>Demonstrate different use cases for ButtonWidget</description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+  'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+    'type!{http://www.appian.com/ae/types/2009}ButtonLayout'(
+      secondaryButtons: {
+        'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Add Item&quot;),
+        'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Reassign&quot;),
+        'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Delete Selected&quot;, disabled: true),
+        'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Clone Selected&quot;, disabled: true)
+      }
+    ),
+    'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, value: &quot;Grid goes here&quot;),
+    'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+      label: &quot;Search Cases&quot;,
+      content: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+          'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+            'type!{http://www.appian.com/ae/types/2009}TextField'(label: &quot;Description&quot;),
+            'type!{http://www.appian.com/ae/types/2009}DropdownField'(
+              label: &quot;Status&quot;,
+              choices: {
+                &quot;Select Status&quot;,
+                &quot;Open&quot;
+              },
+              value: 1
+            ),
+            'type!{http://www.appian.com/ae/types/2009}ButtonLayout'(
+              primaryButtons: {
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Search&quot;)
+              }
+            )
+          }),
+          'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+            'type!{http://www.appian.com/ae/types/2009}TextField'(readOnly: true, value: &quot;Empty grid goes here&quot;)
+          })
+        })
+      }
+    ),
+    'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+      label: &quot;Button Styles&quot;,
+      content: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+          'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+            'type!{http://www.appian.com/ae/types/2009}ButtonLayout'(
+              secondaryButtons: {
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Primary&quot;, style: &quot;PRIMARY&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Normal&quot;,  style: &quot;NORMAL&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Destructive&quot;, style: &quot;DESTRUCTIVE&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Destructive With Confirmation&quot;, style: &quot;DESTRUCTIVE&quot;, confirmMessage: &quot;Are you sure?&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Primary&quot;, style: &quot;PRIMARY&quot;, disabled: true),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Normal&quot;, style: &quot;NORMAL&quot;, disabled: true),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Destructive&quot;, style: &quot;DESTRUCTIVE&quot;, disabled: true)
+              }
+            )
+          })
+        })
+      }
+    ),
+
+    'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+      label: &quot;Button Edge Cases&quot;,
+      content: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+          'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+            'type!{http://www.appian.com/ae/types/2009}ButtonLayout'(
+              primaryButtons: {
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;前希稿統題経匹南増政質可校他&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;)
+              },
+              secondaryButtons: {
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;前希稿統題経匹南増政質可校他&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;),
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(label: &quot;Wrap&quot;)
+              }
+            )
+          })
+        })
+      }
+    ),
+	load(
+  X: 99,
+  Y: 88,
+	'type!{http://www.appian.com/ae/types/2009}SectionLayout'(
+      label: &quot;Save To Variables and Reevaluation Buttons&quot;,
+      content: {
+        'type!{http://www.appian.com/ae/types/2009}ColumnArrayLayout'(columns: {
+          'type!{http://www.appian.com/ae/types/2009}ColumnLayout'(contents: {
+            'type!{http://www.appian.com/ae/types/2009}ButtonLayout'(
+              primaryButtons: {
+'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(
+          label: &quot;Sets Y=1 (confirm)&quot;,
+          style: &quot;NORMAL&quot;,
+          confirmMessage: &quot;Do you want to set Y=1 which is now &quot; &amp; Y &amp; &quot; ?&quot;,
+          disabled: false,
+          value: 1,
+          saveInto: Y
+      ),
+      'type!{http://www.appian.com/ae/types/2009}ButtonWidget'( 
+          label: &quot;Sets Y=2 (confirm)&quot;,
+          style: &quot;PRIMARY&quot;,
+          confirmMessage: &quot;Do you want to set Y=2 which is now &quot; &amp; Y &amp; &quot; ?&quot;,
+          disabled: false,
+          value: 2,
+          saveInto: Y
+      ),
+      'type!{http://www.appian.com/ae/types/2009}ButtonWidget'( 
+          label: &quot;Set Y=3 (confirm)&quot;,
+          style: &quot;DESTRUCTIVE&quot;,
+          confirmMessage: &quot;             Do you want to set Y=3 which is now &quot; &amp; Y &amp; &quot; ?         &quot;,
+          disabled: false,
+          value: 3,
+          saveInto: Y
+      )     
+                              },
+              secondaryButtons: {
+                'type!{http://www.appian.com/ae/types/2009}ButtonWidget'( 
+          label: &quot;Set X=1 (no confirm)&quot;,
+          style: &quot;NORMAL&quot;,
+          disabled: false,
+          value: 1,
+          saveInto: X
+      ),
+      'type!{http://www.appian.com/ae/types/2009}ButtonWidget'( 
+          label: &quot;Set X=2 (no confirm)&quot;,
+          style: &quot;PRIMARY&quot;,
+          disabled: false,
+          value: 2,
+          saveInto: X
+      ),
+      'type!{http://www.appian.com/ae/types/2009}ButtonWidget'( 
+          label: &quot;Set X='zebra' (no confirm)&quot;,
+          style: &quot;DESTRUCTIVE&quot;,
+          disabled: false,
+          value: &quot;Zebra&quot;,
+          saveInto: X
+      ),      
+      'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(
+          label: &quot;X is now &quot; &amp; X &amp; &quot;... Y is now &quot; &amp; Y &amp; &quot; (Disabled)&quot;,
+          disabled: true
+      ),
+      
+      'type!{http://www.appian.com/ae/types/2009}ButtonWidget'(
+                confirm: &quot;I do nothing when clicked&quot;
+      )
+              }
+            )
+          })
+        })
+      }
+    )
+	)
+  })
+})
+
+</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

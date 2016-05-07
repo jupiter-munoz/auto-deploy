@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_adminSpecifiedUserLandingPage</name>
+        <uuid>9145352a-5300-4eff-8109-3ba92a487a2f</uuid>
+        <description></description>
+        <parentUuid>_a-0000d9ba-00e3-8000-fe18-010000010000_2195</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=&#xD;
+load(local!button,&#xD;
+  local!landingPageList:{&quot;https://one-app-mockups.appianci.net/suite/tempo/tasks/assignedtome&quot;,&#xD;
+    &quot;https://one-app-mockups.appianci.net/suite/tempo/tasks/assignedtome&quot;,&#xD;
+    &quot;https://one-app-mockups.appianci.net/suite/tempo/tasks/assignedtome&quot;&#xD;
+  },&#xD;
+  local!groupList:{togroup(23)},&#xD;
+  load(&#xD;
+    /*Admin Controlled - User Landing Page*/&#xD;
+    local!userLandingGrid: fn!lambda_appian_internal(&#xD;
+      ri!defaultLandingPageURL,&#xD;
+      ri!groupList,&#xD;
+      ri!landingPageList,&#xD;
+      ri!addButtonValue,&#xD;
+      ri!addButtonSaveInto,&#xD;
+      ri!editLink,&#xD;
+      #&quot;SYSTEM_SYSRULES_formLayout&quot;(&#xD;
+        /*label: &quot;User Start Page Settings&quot;,*/&#xD;
+        instructions:&quot;Specify the start page for users when they first log in&quot;,&#xD;
+        firstColumnContents: {&#xD;
+         #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+            label: &quot;Default Start Page&quot;,&#xD;
+            required:true,&#xD;
+            /*instructions:&quot;Specify the landing page for users who do not belong to any of the groups specified below or do not have sufficient privileges to view the corresponding page&quot;,*/&#xD;
+            value:ri!defaultLandingPageURL&#xD;
+          ),&#xD;
+          /*'type!{http://www.appian.com/ae/types/2009}ToolbarLayout'(&#xD;
+            buttons: {&#xD;
+              a!buttonWidget(&#xD;
+                label: &quot;New Start Page&quot;,&#xD;
+                style: &quot;NORMAL&quot;&#xD;
+              )&#xD;
+            }&#xD;
+          ),*/&#xD;
+          #&quot;SYSTEM_SYSRULES_gridLayout&quot;(&#xD;
+            label: &quot;Start Pages&quot;,&#xD;
+            instructions:&quot;Members of the specified groups will start on the corresponding page when they first log in. Higher rows in the grid take precedence over lower rows. Paste in the fully-qualified URL of each start page (only pages in the /tempo environment are valid).&quot;,&#xD;
+            headerCells: {&#xD;
+              &#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Start Page URL&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Groups&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;&quot;),&#xD;
+            },&#xD;
+            columnConfigs: {&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),&#xD;
+              &#xD;
+             &#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;NARROW&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;NARROW&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;NARROW&quot;)&#xD;
+            },&#xD;
+            rows: {&#xD;
+              #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(&#xD;
+                contents: {&#xD;
+                   #&quot;SYSTEM_SYSRULES_textField&quot;(align: &quot;LEFT&quot;,value:ri!landingPageList[1]),&#xD;
+                  #&quot;SYSTEM_SYSRULES_pickerFieldGroups&quot;(align: &quot;LEFT&quot;,value:ri!groupList, saveInto:ri!groupList),&#xD;
+                  &#xD;
+                 &#xD;
+          &#xD;
+                 &#xD;
+                  #&quot;SYSTEM_SYSRULES_imageField&quot;(images:#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:#&quot;SYSTEM_SYSRULES_iconIndicator&quot;(&quot;MOVE_UP&quot;)),size:&quot;ICON&quot;),&#xD;
+                  #&quot;SYSTEM_SYSRULES_imageField&quot;(images:#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:#&quot;SYSTEM_SYSRULES_iconIndicator&quot;(&quot;MOVE_DOWN&quot;)),size:&quot;ICON&quot;),&#xD;
+                  #&quot;SYSTEM_SYSRULES_imageField&quot;(images:#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:#&quot;SYSTEM_SYSRULES_iconIndicator&quot;(&quot;REMOVE&quot;)),size:&quot;ICON&quot;)&#xD;
+                }&#xD;
+              )&#xD;
+            }&#xD;
+          ),&#xD;
+         #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+            labelPosition: &quot;COLLAPSED&quot;,&#xD;
+            links: {&#xD;
+              #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(label: &quot;+ New Start Page&quot;)&#xD;
+            }&#xD;
+          )&#xD;
+        },&#xD;
+        buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
+          primaryButtons: {&#xD;
+            #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
+              label: &quot;Save Changes&quot;,&#xD;
+              style: &quot;PRIMARY&quot;&#xD;
+            )&#xD;
+          }&#xD;
+        )&#xD;
+      )&#xD;
+    ),&#xD;
+    local!userLandingModal:fn!lambda_appian_internal(&#xD;
+      ri!group,&#xD;
+      ri!groupSaveInto,&#xD;
+      ri!landingPageURL,&#xD;
+      ri!landingPageURLSaveInto,&#xD;
+      ri!saveButtonValue,&#xD;
+      ri!saveButtonValueSaveInto,&#xD;
+      ri!cancelButtonValue,&#xD;
+      ri!cancelButtonValueSaveInto,&#xD;
+      #&quot;SYSTEM_SYSRULES_tag&quot;(&#xD;
+        tags: {renderingMode: &quot;MODAL&quot;},&#xD;
+        target:&#xD;
+      #&quot;SYSTEM_SYSRULES_formLayout&quot;(&#xD;
+          label: &quot;Add New User Landing Page&quot;,&#xD;
+          firstColumnContents: {&#xD;
+            #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+              label:&quot;&quot;,&#xD;
+              firstColumnContents: {&#xD;
+                #&quot;SYSTEM_SYSRULES_pickerFieldGroups&quot;(&#xD;
+                  label: &quot;Group(s)&quot;,&#xD;
+                  instructions: &quot;&quot;,&#xD;
+                  required:true,&#xD;
+                  value:ri!group,&#xD;
+                  saveInto:ri!groupSaveInto&#xD;
+                ),&#xD;
+                #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+                  label: &quot;Landing Page&quot;,&#xD;
+                  instructions: &quot;Example: https://jboss-verification.appianci.net/suite/tempo/&quot;,&#xD;
+                  value:ri!landingPageURL,&#xD;
+                  saveInto:ri!landingPageURLSaveInto,&#xD;
+                  required:true&#xD;
+                  &#xD;
+                )&#xD;
+              },&#xD;
+              secondColumnContents:&#xD;
+              {&#xD;
+                &#xD;
+              }&#xD;
+            )&#xD;
+          },&#xD;
+          buttons:#&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
+            primaryButtons: {&#xD;
+              #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
+                label: &quot;Save&quot;,&#xD;
+                style: &quot;PRIMARY&quot;,&#xD;
+                skipValidation:true,&#xD;
+                value:ri!saveButtonValue,&#xD;
+                saveInto:ri!saveButtonValueSaveInto&#xD;
+              )&#xD;
+            },&#xD;
+            secondaryButtons: {&#xD;
+              #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
+                label: &quot;Cancel&quot;,&#xD;
+                skipValidation: true,&#xD;
+                value: ri!cancelButtonValue,&#xD;
+                saveInto:ri!cancelButtonValueSaveInto&#xD;
+              )&#xD;
+            }&#xD;
+          )&#xD;
+        )&#xD;
+      )&#xD;
+    ),&#xD;
+    if(local!button=&quot;Add New&quot;,&#xD;
+      local!userLandingModal(&#xD;
+        group: fn!null(),&#xD;
+        saveButtonValue:&quot;Save&quot;,&#xD;
+        saveButtonValueSaveInto:local!button,&#xD;
+        cancelButtonValue:&quot;Cancel&quot;,&#xD;
+        cancelButtonValueSaveInto:local!button&#xD;
+      ),&#xD;
+      local!userLandingGrid(&#xD;
+        defaultLandingPageURL: &quot;https://jboss-verification.appianci.net/suite/tempo/&quot;,&#xD;
+        groupList:local!groupList,&#xD;
+        landingPageList:local!landingPageList,&#xD;
+        addButtonValue:&quot;Add New&quot;,&#xD;
+        addButtonSaveInto:local!button,&#xD;
+        editLink:#&quot;SYSTEM_SYSRULES_dynamicLink&quot;(label:&quot;Edit&quot;,value:3)&#xD;
+      )&#xD;
+    )&#xD;
+  )&#xD;
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>MU_webAPIFullVersion</name>
+        <uuid>6f799ac6-213f-4229-92bb-052fdd0dcea1</uuid>
+        <description></description>
+        <parentUuid>_a-0000d984-4b61-8000-4342-010000010000_2234</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#&quot;SYSTEM_SYSRULES_formLayout&quot;(&#xD;
+  label: &quot;&quot;,&#xD;
+  instructions: &quot;&quot;,&#xD;
+  firstColumnContents: {&#xD;
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+      label: &quot;Properties&quot;,&#xD;
+      firstColumnContents: {&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Name&quot;,&#xD;
+          value: &quot;Query account process record&quot;&#xD;
+        ),&#xD;
+        &#xD;
+        /*a!linkField(&#xD;
+          label: &quot;Generated URL&quot;,&#xD;
+          links:a!safeLink(&#xD;
+            label:&quot;http://jboss-verification.appianci.net/suite/webapi/query_account_process_record&quot;,&#xD;
+            uri:&quot;www.google.com&quot;&#xD;
+          )&#xD;
+        )*/&#xD;
+      },&#xD;
+      secondColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Description&quot;,&#xD;
+          value:&quot;Query account process record given the region and type id&quot;&#xD;
+        )&#xD;
+      }&#xD;
+    ),&#xD;
+   /* a!sectionLayout(&#xD;
+      label:&quot;Endpoint&quot;,&#xD;
+      firstColumnContents:{&#xD;
+        a!radioButtonFieldByIndex(&#xD;
+          label:&quot;Type&quot;,&#xD;
+          value:3,&#xD;
+          choiceLabels:{&quot;Rule&quot;,&quot;JSON&quot;,&quot;Raw HTTP&quot;,&quot;SOAP&quot;}&#xD;
+        )&#xD;
+      },&#xD;
+        secondColumnContents:{&#xD;
+          a!textField(&#xD;
+            label:&quot;Rule&quot;,&#xD;
+            value:&quot;rule!queryAccountProcessRecordByRegionAndTypeID&quot;&#xD;
+          )&#xD;
+        }&#xD;
+    ),*/&#xD;
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+      label: &quot;Variables&quot;,&#xD;
+      firstColumnContents: {&#xD;
+        /*Var and type r/o for rule based */&#xD;
+        #&quot;SYSTEM_SYSRULES_gridLayout&quot;(&#xD;
+            label: &quot;&quot;,&#xD;
+            headerCells: {&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Request Data&quot;),&#xD;
+              &#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Variable&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(label: &quot;Type&quot;),&#xD;
+            },&#xD;
+            columnConfigs: {&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),&#xD;
+             &#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(width: &quot;DISTRIBUTE&quot;)&#xD;
+            },&#xD;
+            rows: {&#xD;
+              #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(&#xD;
+                contents: {&#xD;
+                  #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;Body&quot;,&quot;Headers&quot;,&quot;Parameters&quot;,&quot;Method&quot;},choiceValues:{&quot;body&quot;,&quot;headers&quot;,&quot;parameters&quot;,&quot;method&quot;},value:&quot;parameters&quot;, placeholderLabel:&quot;---Select Type---&quot;,saveInto:&quot;&quot;),&#xD;
+                 &#xD;
+                  #&quot;SYSTEM_SYSRULES_textField&quot;(align: &quot;LEFT&quot;,readOnly:false(),value:&quot;Region&quot;),&#xD;
+                   /*a!textField(align: &quot;LEFT&quot;,readOnly:false(),value:&quot;Text&quot;)*/&#xD;
+                   #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;Body&quot;,&quot;Headers&quot;,&quot;Parameters&quot;,&quot;Method&quot;},choiceValues:{&quot;body&quot;,&quot;headers&quot;,&quot;parameters&quot;,&quot;method&quot;}, placeholderLabel:&quot;Text&quot;,saveInto:&quot;&quot;),&#xD;
+                }&#xD;
+              ),&#xD;
+              #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(&#xD;
+                contents: {&#xD;
+                  #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;Body&quot;,&quot;Headers&quot;,&quot;Parameters&quot;,&quot;Method&quot;},choiceValues:{&quot;body&quot;,&quot;headers&quot;,&quot;parameters&quot;,&quot;method&quot;}, placeholderLabel:&quot;---Select Type---&quot;,saveInto:&quot;&quot;),&#xD;
+                 &#xD;
+                  #&quot;SYSTEM_SYSRULES_textField&quot;(align: &quot;LEFT&quot;,readOnly:false(),value:&quot;TypeID&quot;),&#xD;
+                  /* a!textField(align: &quot;LEFT&quot;,readOnly:true(),value:&quot;Number (Integer)&quot;)*/&#xD;
+                  #&quot;SYSTEM_SYSRULES_dropdownField&quot;(align: &quot;LEFT&quot;,choiceLabels:{&quot;Body&quot;,&quot;Headers&quot;,&quot;Parameters&quot;,&quot;Method&quot;},choiceValues:{&quot;body&quot;,&quot;headers&quot;,&quot;parameters&quot;,&quot;method&quot;}, placeholderLabel:&quot;Number (Integer)&quot;,saveInto:&quot;&quot;),&#xD;
+                }&#xD;
+              )&#xD;
+            }&#xD;
+          ),&#xD;
+        #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+          labelPosition: &quot;COLLAPSED&quot;,&#xD;
+          links: {&#xD;
+            #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(label: &quot;+ New Variable&quot;)&#xD;
+          }&#xD;
+        )&#xD;
+      },&#xD;
+      secondColumnContents: {&#xD;
+        &#xD;
+      }&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+      label: &quot;Action&quot;,&#xD;
+      firstColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_dropdownFieldByIndex&quot;(&#xD;
+          label:&quot;Smart Service&quot;,&#xD;
+          choiceLabels:{&quot;Write to Data Store Entity&quot;},&#xD;
+          placeholderLabel:&quot;===Select Smart Service===&quot;,&#xD;
+          value:1&#xD;
+        )&#xD;
+      },&#xD;
+      secondColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          readOnly:fn!true()&#xD;
+        )&#xD;
+        &#xD;
+      }&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+      label: &quot;&quot;,&#xD;
+      firstColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_pickerFieldCustom&quot;(&#xD;
+          label:&quot;Data Store Entity&quot;,&#xD;
+          selectedLabels:&quot;TMS_AccountType&quot;,&#xD;
+          value:&quot;TMS_customers&quot;&#xD;
+        ),&#xD;
+      },&#xD;
+      secondColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_dropdownFieldByIndex&quot;(&#xD;
+          label:&quot;typeID&quot;,&#xD;
+          choiceLabels:&quot;ri!TypeID&quot;,&#xD;
+          value:1&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_dropdownFieldByIndex&quot;(&#xD;
+          label:&quot;Region&quot;,&#xD;
+          choiceLabels:&quot;ri!Region&quot;,&#xD;
+          value:1&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_dropdownFieldByIndex&quot;(&#xD;
+          label:&quot;accountName&quot;,&#xD;
+          choiceLabels:&quot;ri!TypeID&quot;,&#xD;
+          placeholderLabel:&quot;Do not update&quot;&#xD;
+        )&#xD;
+        &#xD;
+      }&#xD;
+    ),&#xD;
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+      label: &quot;Expression&quot;,&#xD;
+      firstColumnContents:{&#xD;
+        #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+          label: &quot;&quot;,&#xD;
+          labelPosition:&quot;COLLAPSED&quot;,&#xD;
+          value:&quot;=a!toJSON(&#xD;
+    queryrecord(&#xD;
+      cons!AccountRecordType,&#xD;
+      a!query(&#xD;
+        aggregation:a!queryAggregation(&#xD;
+          columns:{&#xD;
+            a!queryAggregationColumn(&#xD;
+              field:ri!TypeID,&#xD;
+              visible:true(),&#xD;
+              isgrouping:true()&#xD;
+            ),&#xD;
+            a!queryAggregationColumn(&#xD;
+              field:ri!Region,&#xD;
+              visible:true(),&#xD;
+              function:SUM&#xD;
+            )&#xD;
+          }&#xD;
+        ),&#xD;
+        pagingInfo: a!pagingInfo(&#xD;
+          startIndex:1,&#xD;
+          batchSize:100,&#xD;
+          sort:a!sortInfo(&#xD;
+            ascending:true()&#xD;
+          )&#xD;
+        )&#xD;
+      )&#xD;
+    )&quot;&#xD;
+        )&#xD;
+      }&#xD;
+    )&#xD;
+  },&#xD;
+  secondColumnContents: {&#xD;
+    &#xD;
+  },&#xD;
+  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
+    primaryButtons: {&#xD;
+      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
+        label: &quot;Save&quot;,&#xD;
+        style: &quot;PRIMARY&quot;&#xD;
+      )&#xD;
+    },&#xD;
+    secondaryButtons: {&#xD;
+      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
+        label: &quot;Cancel&quot;,&#xD;
+        skipValidation: true,&#xD;
+        value: true&#xD;
+      )&#xD;
+    }&#xD;
+  )&#xD;
+) </definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

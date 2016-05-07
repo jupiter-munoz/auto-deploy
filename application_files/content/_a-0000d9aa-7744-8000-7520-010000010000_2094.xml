@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CollapsibleSection</name>
+        <uuid>_a-0000d9aa-7744-8000-7520-010000010000_2094</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!textValue1,
+  local!textValue2,
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+    firstColumnContents: {
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        isCollapsible: true,
+        label: &quot;Collapsible Section&quot;,
+        firstColumnContents: {
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;Read only field&quot;,
+            value: &quot;Can't edit me!&quot;,
+            readOnly: true
+          ),
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;I must be blank&quot;,
+            value: local!textValue1,
+            saveInto: local!textValue1,
+            validations: {
+              &quot;This text field should be empty&quot;
+            }
+          )
+        },
+        secondColumnContents: {
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            label: &quot;Icon Image Gallery&quot;,
+            size: &quot;ICON&quot;,
+            images: {
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_OK&quot;)
+              ),
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_OK&quot;)
+              ),
+              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_WARN&quot;)
+              )
+            }
+          )
+        },
+        validations: {
+          local!textValue2
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        isCollapsible: true,
+        label: &quot;Collapsible Section -- this time with a really really really long title&quot;,
+        firstColumnContents: {
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;Set Component Validation&quot;,
+            instructions: &quot;Sets the validation error for Text Field Two above&quot;,
+            value: local!textValue1,
+            saveInto: local!textValue1
+          ),
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;Set Section Validation&quot;,
+            instructions: &quot;Sets the validation error for Section One above&quot;,
+            value: local!textValue2,
+            saveInto: local!textValue2
+          ),
+          #&quot;SYSTEM_SYSRULES_gridField&quot;(
+            label: &quot;Grid Field&quot;,
+            totalCount: 3,
+            columns: {
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                label: &quot;Text&quot;,
+                data: {
+                  &quot;Problem&quot;,
+                  &quot;In Progress&quot;,
+                  &quot;Done&quot;
+                }
+              ),
+              #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
+                label: &quot;Images&quot;,
+                data: {
+                  #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                    document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_OK&quot;)
+                  ),
+                  #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                    document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_OK&quot;)
+                  ),
+                  #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+                    document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;STATUS_WARN&quot;)
+                  )
+                },
+                size: &quot;ICON&quot;
+              )
+            },
+            value: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+              startIndex: 1,
+              batchSize: - 1
+            )
+          )
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        isCollapsible: true,
+        label: &quot;&quot;,
+        firstColumnContents: {
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;A Collapsible Section with no label&quot;,
+            readOnly: true
+          ),
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;This field must be blank&quot;,
+            value: local!textValue1,
+            saveInto: local!textValue1,
+            validations: {
+              &quot;This text field should be empty&quot;
+            }
+          )
+        }
+      )
+    },
+    secondColumnContents: {
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        isCollapsible: true,
+        label: &quot;A Plain Collapsible Section&quot;,
+        firstColumnContents: {
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            label: &quot;Image Gallery&quot;,
+            images: {
+              #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                source: &quot;https://dl.dropboxusercontent.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg&quot;
+              ),
+              #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                source: &quot;https://dl.dropboxusercontent.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg&quot;
+              )
+            }
+          ),
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            label: &quot;Image Gallery&quot;,
+            images: {
+              #&quot;SYSTEM_SYSRULES_webImage&quot;(
+                source: &quot;https://dl.dropboxusercontent.com/s/obky8lv5srjn1pr/engineering_71_release_lg.jpg&quot;
+              )
+            }
+          )
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label: &quot;Non-Collapsible Section&quot;,
+        firstColumnContents: {
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;Read only field&quot;,
+            value: &quot;Can't edit me either!&quot;,
+            readOnly: true
+          ),
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;This field must be blank&quot;,
+            value: local!textValue1,
+            saveInto: local!textValue1,
+            validations: {
+              &quot;This text field should be empty&quot;
+            }
+          )
+        }
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

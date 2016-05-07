@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Label Position" a:uuid="756a11dd-fb6d-4ea6-a6ab-6e413edd8f72">
+        <a:description></a:description>
+        <a:uiExpr>=#&quot;4380c6bc-08ec-4535-95c5-de8ed48ad741&quot;()</a:uiExpr>
+        <a:urlStub>vUVsyQ</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

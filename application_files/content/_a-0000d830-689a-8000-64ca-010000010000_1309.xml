@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>uploadPictureTask</name>
+        <uuid>_a-0000d830-689a-8000-64ca-010000010000_1309</uuid>
+        <description></description>
+        <parentUuid>_a-0000d825-eb59-8000-e787-010000010000_1262</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_formLayout&quot;(
+  label: &quot;Upload a Picture&quot;,
+  firstColumnContents: {
+    #&quot;SYSTEM_SYSRULES_textField&quot;(label: &quot;Document Name&quot;, instructions: &quot;Leave blank to use the filename from your local computer.&quot;, value: ri!name, saveInto: ri!name),
+    #&quot;SYSTEM_SYSRULES_paragraphField&quot;(label: &quot;Document Description&quot;, value: ri!desc, saveInto: ri!desc),
+    #&quot;SYSTEM_SYSRULES_fileUploadField&quot;(
+      label: &quot;File&quot;,
+      required: true,
+      target: #&quot;_a-0000d825-eb59-8000-e787-010000010000_1266&quot;,
+      documentName: ri!name,
+      documentDescription: ri!desc,
+      value: ri!file,
+      saveInto: ri!file
+    )
+  },
+  buttons: #&quot;SYSTEM_SYSRULES_ButtonArrayLayout&quot;(buttons: {
+    #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(label: &quot;Submit&quot;, style: &quot;PRIMARY&quot;)
+  })
+)</definition>
+        <namedTypedValue>
+            <name>file</name>
+            <type>
+                <name>CollaborationDocument</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>name</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>desc</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

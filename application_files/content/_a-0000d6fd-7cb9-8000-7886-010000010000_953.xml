@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>reportClosedOpportunities</name>
+        <uuid>_a-0000d6fd-7cb9-8000-7886-010000010000_953</uuid>
+        <description></description>
+        <parentUuid>_a-0000d6fd-7cb9-8000-7886-010000010000_951</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#&quot;SYSTEM_SYSRULES_gridField&quot;(
+  totalCount: 18,
+  columns: {
+    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+      label: &quot;Opportunity&quot;,
+      data: {&quot;DataScan Tech&quot;, &quot;KBC Direct - Phase 2 Licenses&quot;, &quot;Fidelity Investments - BPM&quot;, &quot;Husky PS - Addt'l services for ALC&quot;, &quot;Clayton 2012 Subscription&quot;, &quot;Frankfort Business School&quot;, &quot;Additional licenses for SuperIQ&quot;, &quot;Library of Congress - LOC - OSI&quot;, &quot;BANA - GBCS - Process Analysis&quot;, &quot;NSN - Maint Renewal 04/2012&quot;,&quot;Primatics of M&amp;T Bank&quot;, &quot;School Bd of Polk County - Maint renewal 12/2012&quot;, &quot;Library of Congress - ITS&quot;, &quot;SOW1 of NBN Process Management&quot;, &quot;Incentra - Maint Renewal 9/2012&quot;, &quot;Epana - Maint Renewal 9/2012&quot;, &quot;British Columbia Teachers Fed - Maint Renewal&quot;, &quot;Wellmark - Maint Renewal 9/2012&quot;}
+    ),
+    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+      label: &quot;Account&quot;,
+      data: {&quot;DataScan Tech&quot;, &quot;KBC Group NV&quot;, &quot;Fidelity&quot;, &quot;Husky Energy&quot;, &quot;Clayton Holdings, Inc.&quot;, &quot;Frankfurt Business School&quot;, &quot;SuperIQ Pty Limited&quot;, &quot;U.S. Library of Congress&quot;, &quot;Bank of America&quot;, &quot;Nokia Siemens Networks&quot;, &quot;M&amp;T Bank&quot;, &quot;School Board of Polk County, FL&quot;, &quot;U.S. Library of Congress&quot;, &quot;Telstra&quot;, &quot;Incentra&quot;, &quot;Epana Networks, Inc.&quot;, &quot;British Columbia Teachers Federation&quot;, &quot;Wellmark, Inc.&quot;}
+    ),
+    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+      label: &quot;Win Date&quot;,
+      field: &quot;Win Date&quot;,
+      alignment: &quot;RIGHT&quot;,
+      data: {tostring(&quot;4/14/2012&quot;), tostring(&quot;4/13/2012&quot;), tostring(&quot;4/9/2012&quot;), tostring(&quot;4/8/2012&quot;), tostring(&quot;4/8/2012&quot;), tostring(&quot;4/8/2012&quot;), tostring(&quot;4/8/2012&quot;), tostring(&quot;4/4/2012&quot;), tostring(&quot;4/2/2012&quot;), tostring(&quot;4/2/2012&quot;), tostring(&quot;4/1/2012&quot;), tostring(&quot;4/1/2012&quot;), tostring(&quot;4/1/2012&quot;), tostring(&quot;4/1/2012&quot;), tostring(&quot;4/1/2012&quot;), tostring(&quot;4/1/2012&quot;), tostring(&quot;4/1/2012&quot;), tostring(&quot;4/1/2012&quot;)}
+),
+    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+      label: &quot;Type&quot;,
+      data: {&quot;Software Sale-Perpetual License&quot;, &quot;Software Sale - Perpetual License&quot;, &quot;Software Sale - Perpetual License&quot;, &quot;Professional Services Sale&quot;, &quot;Software Sale - Cloud Subscription&quot;, &quot;Software Sale - Cloud Subscription&quot;, &quot;Software Sale - Perpetual License&quot;, &quot;Software Sale - Cloud Subscription&quot;, &quot;Professional Services Sale&quot;, &quot;Maintenance Sale&quot;,&quot;Software Sale - Perpetual License&quot;, &quot;Maintenance Sale&quot;, &quot;Software Sale - Cloud Subscription&quot;, &quot;Professional Services Sale&quot;, &quot;Maintenance Sale&quot;, &quot;Maintenance Sale&quot;, &quot;Maintenance Sale&quot;, &quot;Maintenance Sale&quot;}
+),
+    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+      label: &quot;Owner&quot;,
+      data: {&quot;Roxann Kerner&quot;, &quot;Ryan Gates&quot;, &quot;Michael Massa&quot;, &quot;Scott Ulrichs&quot;, &quot;Scott Ulrichs&quot;, &quot;Ryan Gates&quot;, &quot;Karen Astley&quot;, &quot;John Ryan&quot;, &quot;Joe Barry&quot;, &quot;Justin Thomas&quot;, &quot;Marc Wilson&quot;, &quot;Glenn Healy&quot;, &quot;John Ryan&quot;, &quot;Ambarish Desai&quot;, &quot;Scott Ulrichs&quot;, &quot;Jamie Friedman&quot;, &quot;Scott Ulrichs&quot;, &quot;Scott Ulrichs&quot;}
+    )
+  },
+  value: 'type!{http://www.appian.com/ae/types/2009}PagingInfo'(
+    startIndex: 1,
+    batchSize: 18,
+    sort: 'type!{http://www.appian.com/ae/types/2009}SortInfo'(field: &quot;Win Date&quot;, ascending:true)
+  )
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

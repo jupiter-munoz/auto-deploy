@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+  targetNamespace="https://charts-full.appianci.net/suite/types/"
+  xmlns:tns="https://charts-full.appianci.net/suite/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="OpportunitySources">
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">
+			@Id
+			@GeneratedValue
+		  </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="source" nillable="true" type="xsd:string"/>
+      <xsd:element name="total" nillable="true" type="xsd:double"/>
+      <xsd:element name="demoId" nillable="true" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
